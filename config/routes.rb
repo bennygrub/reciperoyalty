@@ -1,4 +1,6 @@
 Rr::Application.routes.draw do
+  resources :recipes
+
   get "static/home"
 
   get "static/about"

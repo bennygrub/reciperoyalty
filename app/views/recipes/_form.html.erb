@@ -1,5 +1,5 @@
 
-<%= simple_form_for @recipe, html: {multipart: true} do |f| %>
+<%= simple_nested_form_for @recipe, html: {multipart: true} do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -19,7 +19,9 @@
     <%= f.simple_fields_for :recipe_images do |m| %>
         <%= m.input :caption %>
         <%= m.file_field :photo %>
+        <%= m.link_to_remove "Remove this photo" %>
     <% end %>
+    <p><%= f.link_to_add "Add a photo", :recipe_images %></p>
 
   </div>
 

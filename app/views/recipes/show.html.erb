@@ -1,5 +1,5 @@
 <p>
-  <%= image_tag @recipe.recipe_images.first.photo.url %>
+  <%= image_tag @recipe.recipe_images.first.photo.url if @recipe.recipe_images.count > 0%>
 </p>
 <p>
   <b>The Cook:</b>

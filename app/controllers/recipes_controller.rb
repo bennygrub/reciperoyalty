@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new.json
   def new
     @recipe = Recipe.new
-    3.times {@recipe.recipe_images.build}
+    @recipe.recipe_images.build
     @difficulty = ['Easy', 'Medium', 'Hard']
     
 
@@ -46,7 +46,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
-    3.times { @recipe.recipe_images.build } # … and this
+    @recipe.recipe_images.build
   end
 
   # POST /recipes

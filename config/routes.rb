@@ -1,5 +1,6 @@
 Rr::Application.routes.draw do
 
+  resources :dishes
   resources :recipes
 
   get "static/home"

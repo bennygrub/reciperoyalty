@@ -1,4 +1,4 @@
-<h1><%= @user.name %></h1>
+<h1><%= @user.name %><span style="font-size:10px;"><%= link_to('(edit)', edit_user_registration_path) %></span></h1>
 <p><%= image_tag @user.avatar.url(:medium) %></p>
 <p><%= @user.website %></p>
 <p><%= @user.about %></p>

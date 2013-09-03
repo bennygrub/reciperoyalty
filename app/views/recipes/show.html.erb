@@ -1,12 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <b>User:</b>
-  <%= @recipe.user_id %>
+  <%= image_tag @recipe.recipe_images.first.photo.url %>
+</p>
+<p>
+  <b>The Cook:</b>
+  <%= User.find(@recipe.user_id).name %>
+</p>
+<p>
+  <b>Dish:</b>
+  <%= Dish.find(@recipe.dish_id).name %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <b>Recipe Name:</b>
   <%= @recipe.name %>
 </p>
 
@@ -47,4 +52,5 @@
 
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<%= link_to 'Back', recipes_path %> |
+<%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>

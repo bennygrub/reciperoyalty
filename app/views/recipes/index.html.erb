@@ -1,5 +1,5 @@
 <h1>Listing recipes</h1>
-
+<h3>King Recipes</h3>
 <table>
   <tr>
     <th>User</th>
@@ -16,7 +16,7 @@
     <th></th>
   </tr>
 
-<% @recipes.each do |recipe| %>
+<% @recipes_best.each do |recipe| %>
   <tr>
     <td><%= recipe.user_id %></td>
     <td><%= recipe.name %></td>
@@ -34,6 +34,40 @@
 <% end %>
 </table>
 
+<h3>Challenger Recipes</h3>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+    <th>Introduction</th>
+    <th>Serving</th>
+    <th>Prep</th>
+    <th>Cook</th>
+    <th>Difficulty</th>
+    <th>Ingredients</th>
+    <th>Directions</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @recipes_challengers.each do |recipe| %>
+  <tr>
+    <td><%= recipe.user_id %></td>
+    <td><%= recipe.name %></td>
+    <td><%= recipe.introduction %></td>
+    <td><%= recipe.serving %></td>
+    <td><%= recipe.prep %></td>
+    <td><%= recipe.cook %></td>
+    <td><%= recipe.difficulty %></td>
+    <td><%= recipe.ingredients %></td>
+    <td><%= recipe.directions %></td>
+    <td><%= link_to 'Show', recipe %></td>
+    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+    <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
 <br />
 
 <%= link_to 'New Recipe', new_recipe_path %>

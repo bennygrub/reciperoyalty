@@ -1,15 +1,26 @@
-<%= simple_form_for(@recipe) do |f| %>
+
+<%= simple_form_for @recipe, html: {multipart: true} do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    Select the Recipe You Want to Challenge</br>
+    <%= f.collection_select :dish_id, Dish.order(:name),:id,:name, {:prompt => @challenge_recipe_name? @challenge_recipe_name : "King Recipe", :selected => @challenge_recipe} %>
     <%= f.input :name %>
     <%= f.input :introduction %>
-    <%= f.input :serving %>
-    <%= f.input :prep %>
-    <%= f.input :cook %>
-    <%= f.input :difficulty %>
+    <%= f.input :difficulty, collection: @difficulty, prompt: "Select Difficulty Level"%>
+    <%= f.input :serving, collection: 1..10, prompt: "Number of Servings"%>
+    Prep Time</br>
+    <%= f.time_select :prep, :default => {:hour => '0', :minute => '0'} %></br>
+    Cook Time</br>
+    <%= f.time_select :cook, :default => {:hour => '0', :minute => '0'} %></br>
     <%= f.input :ingredients %>
     <%= f.input :directions %>
+    
+    <%= f.simple_fields_for :recipe_images do |m| %>
+        <%= m.input :caption %>
+        <%= m.file_field :photo %>
+    <% end %>
+
   </div>
 
   <div class="form-actions">

@@ -4,6 +4,8 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
+    @recipes_best = Recipe.where("king = ?", true)
+    @recipes_challengers = Recipe.where("king IS NULL")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,6 +28,14 @@ class RecipesController < ApplicationController
   # GET /recipes/new.json
   def new
     @recipe = Recipe.new
+    3.times {@recipe.recipe_images.build}
+    @difficulty = ['Easy', 'Medium', 'Hard']
+    
+
+    if params[:challenge]
+      @challenge_recipe = params[:challenge]
+      @challenge_recipe_name = Dish.find(@challenge_recipe).name
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,11 +46,13 @@ class RecipesController < ApplicationController
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
+    3.times { @recipe.recipe_images.build } # … and this
   end
 
   # POST /recipes
   # POST /recipes.json
   def create
+
     @recipe = current_user.recipes.new(params[:recipe])
 
     respond_to do |format|

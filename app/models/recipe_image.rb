@@ -3,5 +3,4 @@ class RecipeImage < ActiveRecord::Base
   belongs_to :recipe
   has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   #validates_attachment_presence : photo
-  #validates_attachment_size : photo, :less_than => 5.megabytes
 end

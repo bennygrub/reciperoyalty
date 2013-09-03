@@ -1,0 +1,5 @@
+<h1><%= @user.name %></h1>
+<p><%= image_tag @user.avatar.url(:medium) %></p>
+<p><%= @user.website %></p>
+<p><%= @user.about %></p>
+<p>Recipes: <%= @user.recipes.count %></p>

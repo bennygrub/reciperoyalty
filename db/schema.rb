@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904171545) do
+ActiveRecord::Schema.define(:version => 20130904214027) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -54,20 +54,20 @@ ActiveRecord::Schema.define(:version => 20130904171545) do
   create_table "recipes", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.string   "introduction"
+    t.text     "introduction", :limit => 255
     t.integer  "serving"
     t.time     "prep"
     t.time     "cook"
     t.string   "difficulty"
     t.text     "ingredients"
     t.text     "directions"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.integer  "dish_id"
-    t.boolean  "king",         :default => false
+    t.boolean  "king",                        :default => false
     t.datetime "king_at"
     t.datetime "king_out"
-    t.boolean  "slider",       :default => false
+    t.boolean  "slider",                      :default => false
   end
 
   create_table "taggings", :force => true do |t|

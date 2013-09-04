@@ -3,3 +3,24 @@
 <p><%= @user.website %></p>
 <p><%= @user.about %></p>
 <p>Recipes: <%= @user.recipes.count %></p>
+<p>Challenges: <%= @current_kings.count %>/<%= @user.recipes.count %></p>
+
+<h3>Current KING Recipes (<%= @current_kings.count %>)</h3>
+<% @current_kings.each do |king| %>
+	<%= image_tag king.recipe_images.first.photo.url(:thumb) if king.recipe_images.count > 0 %> 
+	<%= link_to king.name, recipe_path(king) %> - <%= Dish.find(king.dish_id).name %> - 
+	Time Remaining: <%= distance_of_time_in_words(30.days.ago, king.created_at, include_seconds: true) %> </br>
+<% end %>
+
+<h3>Current CHALLENGER Recipes (<%= @current_challenges.count %>)</h3>
+<% @current_challenges.each do |challenger| %>
+	<%= image_tag challenger.recipe_images.first.photo.url(:thumb) if challenger.recipe_images.count > 0 %> 
+	<%= link_to challenger.name, recipe_path(challenger) %> - <%= Dish.find(challenger.dish_id).name %> - 
+	Time Remaining: <%= distance_of_time_in_words(30.days.ago, challenger.created_at, include_seconds: true) %> </br>
+<% end %>
+
+<h3>PAST Recipes (<%= @past_recipes.count %>)</h3>
+<% @past_recipes.each do |past_recipe| %>
+	<%= image_tag past_recipe.recipe_images.first.photo.url(:thumb) if past_recipe.recipe_images.count > 0 %> 
+	<%= link_to past_recipe.name, recipe_path(past_recipe) %> - <%= Dish.find(past_recipe.dish_id).name %></br>
+<% end %>

@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     @recipes_best = Recipe.where("king = ?", true)
-    @recipes_challengers = Recipe.where("king IS NULL")
+    @recipes_challengers = Recipe.where("king = ?", false)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +17,10 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
+    @love = Love.new
+    if current_user
+      @already_loved = Love.where("user_id = ? AND recipe_id = ?", current_user, @recipe.id)
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -87,6 +91,15 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
+
+    respond_to do |format|
+      format.html { redirect_to recipes_url }
+      format.json { head :no_content }
+    end
+  end
+
+  def love
+    @recipe = Recipe.find(params[:id])
 
     respond_to do |format|
       format.html { redirect_to recipes_url }

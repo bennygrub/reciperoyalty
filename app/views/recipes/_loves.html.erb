@@ -1,0 +1,5 @@
+<%= simple_form_for @love, remote: true, :url => url_for(:action => 'create', :controller => 'loves'), :method => 'post' do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :recipe_id, value: @recipe.id %>
+  <%= f.button :submit, "Love This Recipe", class: "btn btn-large btn-primary" %>
+<% end %>

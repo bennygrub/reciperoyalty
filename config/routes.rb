@@ -1,5 +1,7 @@
 Rr::Application.routes.draw do
 
+
+  resources :loves
   resources :dishes
   resources :recipes
 

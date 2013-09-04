@@ -11,6 +11,8 @@ Rr::Application.routes.draw do
 
   get "static/contact"
 
+  post "recipes/add_new_comment"
+
   devise_for :users
   resources :users
 

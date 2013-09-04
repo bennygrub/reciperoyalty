@@ -1,0 +1,5 @@
+  <%= form_tag "/recipes/add_new_comment" do %>
+    <%= hidden_field_tag "id", @recipe.id %>
+    <%= text_area_tag "comment[comment]" %>
+    <%= submit_tag "Post Comment", class: "btn btn-primary" %>
+  <% end %>

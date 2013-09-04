@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @love = Love.new
+    @comments = @recipe.comments
     if current_user
       @already_loved = Love.where("user_id = ? AND recipe_id = ?", current_user, @recipe.id)
     end
@@ -98,12 +99,15 @@ class RecipesController < ApplicationController
     end
   end
 
-  def love
+  def add_new_comment
+    #raise
     @recipe = Recipe.find(params[:id])
+    @comment = params[:comment][:comment]
+    @recipe.comments.create(:comment => @comment, user_id: current_user.id) 
 
     respond_to do |format|
-      format.html { redirect_to recipes_url }
-      format.json { head :no_content }
+      format.html { redirect_to @recipe, notice: "Comment Saved" }
+      format.js
     end
   end
 end

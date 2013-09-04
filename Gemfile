@@ -20,6 +20,7 @@ gem 'rmagick', '2.13.2'
 gem "paperclip", "~> 3.0"
 gem "nested_form"
 gem 'acts-as-taggable-on'
+gem 'acts_as_commentable', '3.0.1'
 
 # Gems used only for assets and not required
 # in production environments by default.

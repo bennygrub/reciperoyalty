@@ -22,8 +22,8 @@
     <td><%= recipe.name %></td>
     <td><%= recipe.introduction %></td>
     <td><%= recipe.serving %></td>
-    <td><%= recipe.prep %></td>
-    <td><%= recipe.cook %></td>
+    <td><%= recipe.prep.strftime("%H:%M") %></td>
+    <td><%= recipe.cook.strftime("%H:%M") %></td>
     <td><%= recipe.difficulty %></td>
     <td><%= recipe.ingredients %></td>
     <td><%= recipe.directions %></td>
@@ -57,8 +57,8 @@
     <td><%= recipe.name %></td>
     <td><%= recipe.introduction %></td>
     <td><%= recipe.serving %></td>
-    <td><%= recipe.prep %></td>
-    <td><%= recipe.cook %></td>
+    <td><%= recipe.prep.strftime("%H:%M") %></td>
+    <td><%= recipe.cook.strftime("%H:%M") %></td>
     <td><%= recipe.difficulty %></td>
     <td><%= recipe.ingredients %></td>
     <td><%= recipe.directions %></td>

@@ -2,6 +2,14 @@
   <b>Name:</b>
   <%= @dish.name %>
 </p>
+<p>
+  <b>Cusine:</b>
+  <%= @dish.cuisine_list %>
+</p>
+<p>
+  <b>Category:</b>
+  <%= @dish.category_list %>
+</p>
 
 
 <%= link_to 'Edit', edit_dish_path(@dish) %> |

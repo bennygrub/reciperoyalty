@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'rmagick', '2.13.2'
 gem "paperclip", "~> 3.0"
 gem "nested_form"
+gem 'acts-as-taggable-on'
 
 # Gems used only for assets and not required
 # in production environments by default.

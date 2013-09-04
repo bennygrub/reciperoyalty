@@ -1,0 +1,112 @@
+h1 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+}
+
+h3 {
+	letter-spacing: -2px;
+}
+
+.rounded {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.global_shadow {
+	-moz-box-shadow: 0 0 5px #373737;
+	-webkit-box-shadow: 0 0 5px #373737;
+	-o-box-shadow: 0 0 5px #373737;
+	box-shadow: 0 0 5px #373737;
+}
+
+.clear_me {
+	clear: both;
+}
+
+.left{float:left;}
+
+.right{float:right;}
+
+.logo {
+	width: 100px;
+}
+
+nav.navbar-inner {
+	background: #000;
+}
+
+.navbar .nav > li > a {
+	color: #fff;
+	text-shadow: 0 0 0 #000;
+	font-weight: normal;
+	font-size: 15px;
+}
+
+.navbar .nav > li > a:hover {
+	color: #ee3335;
+	text-shadow: 0 0 0 #000;
+	font-weight: normal;
+}
+
+a, a:visited {
+	color: #ee3335;
+}
+
+a:hover {
+	color: #000;
+	background-color: #fff;
+}
+
+.navbar .brand {
+	padding: 2px 20px 3px;
+}
+
+.navbar .nav {
+	padding: 10px;
+}
+
+#profile_top {
+	border-bottom: solid 3px black;
+	width: 100%;
+	padding: 10px 0;
+}
+
+#profile_left h1 {
+	line-height: 20px;
+}
+
+#profile_left {
+	width:42%;
+}
+
+#profile_right {
+	width:40%;
+}
+
+.img_shape {
+	max-width: 100%;
+	width: 100%;
+}
+
+.img_profile {
+	width: 250px;
+}
+
+.small_recipe_view {
+	width:300px;
+	margin: 20px;
+}
+.small_recipe_view_img {
+	width:100px;
+	overflow: hidden;
+}
+.small_recipe_view_text {
+	margin: 0 35px 0 0;
+	font-family: 'Roboto', sans-serif; 
+}
+
+.profile_recipes {
+	margin:0 0 50px 0;
+	width: 100%;
+}

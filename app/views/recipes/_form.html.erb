@@ -1,4 +1,5 @@
 <h4>Put Your Recipe Where Your Mouth Is!</h4></br>
+<div class="left">
 <%= simple_nested_form_for @recipe, html: {multipart: true} do |f| %>
   <%= f.error_notification %>
 
@@ -28,3 +29,15 @@
     <%= f.button :submit, "Submit Your Challenge Recipe >>" %> <%= link_to 'Cancel', recipes_path %>
   </div>
 <% end %>
+</div>
+<div class="right helper_box rounded">
+  <h4 style="text-align:center; font-weight:bold;">Tips for Creating A Good Challenge</h4>
+  <ul>
+    <li>Be Extremely Descriptive in Your Titles and Instructions</li>
+    <li>Write in a Voice that Appeals to Your Core Audience</li>
+    <li>Use Layered Tastes</li>
+    <li>Clearly State Each and Every Important Detail</li>
+    <li>BRING THE FREAKIN' HEAT</li>
+  </ul>
+  <span style="font-size:11px;">*Remember: None of the tips matter, if your recipe isn't the BEST!</span>
+</div>

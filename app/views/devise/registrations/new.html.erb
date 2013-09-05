@@ -1,21 +1,32 @@
 <h2>Sign up</h2>
+<div class="left">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
-  <%= devise_error_messages! %>
+    <div><%= f.text_field :name, placeholder: "Name" %></div>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
+    <div><%= f.email_field :email,  placeholder: "Email", :autofocus => true %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+    <div><%= f.password_field :password, placeholder: "Password" %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+    <div><%= f.password_field :password_confirmation, placeholder: "Re-type Your Password" %></div>
+    
+    <div style="margin:20px 0 0 0;">
+      <%= f.submit "Become a Recipe Royalty Member" %>
+    <p style="font-size:11px;color:lightgrey;margin-left:75px;">(Your Information Will Never Be Shared)</p>
+    </div>
+    
+  <% end %>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-  
-  <div style="margin:20px 0 0 0;"><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
+<div class="right helper_box rounded">
+  <h4 style="margin: 10px 0 10px 10px; font-weight:bold;">Member Benefits</h4>
+  <ul>
+    <li>Challenge Recipe Kings</li>
+    <li>Nominate Recipes for Royalty (aka Vote for Them)</li>
+    <li>Comment on Recipes</li>
+    <li>View Blind Taste Cook Off's First</li>
+    <li>Get Insane Food Product Deals</li>
+  </ul>
+</div>

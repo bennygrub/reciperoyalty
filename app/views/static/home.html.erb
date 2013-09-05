@@ -12,15 +12,21 @@
   </ul>
 </div>
 <div id="home_middle">
-	<h2>There Can Only Be One <span class="bolded_headline">BEST</span>. Find Only The Single <span class="bolded_headline">GREATEST RECIPE</span>  for Each Dish. </h2>
+	<h2>
+		<span style="text-transform:uppercase;">There Can Only Be One <span class="bolded_headline">BEST</span>.</span> </br>
+		<span style="font-size:32px;">Find Only The Single <span class="bolded_headline">GREATEST RECIPE</span>  For Every Dish.</span> 
+	</h2>
 </div>
 
 <div id="home_bottom">
 	<% @featured.each do |feature| %>
-		<div class="feature_view rounded global_shadow">
+		<%= link_to(feature) do %>
+		<div class="feature_view rounded global_shadow fade">
 			<%= image_tag feature.recipe_images.first.photo.url if feature.recipe_images.count > 0 %>
 			<p class="feature_text"><%= feature.name %></p>
-
 		</div>
+		<% end %>
 	<% end %>
 </div>
+<div class="clear_me"></div>
+<p style="text-align:right; margin-right:10%;"><%= link_to 'View All Recipes >>', recipes_path %></p>

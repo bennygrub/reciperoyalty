@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Recipe Royalty" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Recipe Royalty" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "my_styles", :media => "all" %>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100,900italic,700italic,500italic,400italic,100italic,300italic' rel='stylesheet' type='text/css'>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/slider' %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/navigation' %>
+        </div>
+      </nav>
+    </header>
+    <main role="main">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>

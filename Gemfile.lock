@@ -55,6 +55,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.1)
+    flexslider (2.0.2)
     hike (1.2.3)
     i18n (0.6.5)
     journey (1.0.4)
@@ -139,6 +140,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
   devise
+  flexslider
   jquery-rails
   nested_form
   paperclip (~> 3.0)

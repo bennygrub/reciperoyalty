@@ -1,2 +1,26 @@
-<h1>Static#home</h1>
-<p>Find me in app/views/static/home.html.erb</p>
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img class="image_stretch" class="image_stretch" src="https://d1qpxsaxxi4rth.cloudfront.net/uploads/image/image/12349/1944_lamb_rogan_josh_with_lemon_and_coriander_rice.jpg" />
+    </li>
+    <li>
+      <img class="image_stretch" src="https://d2k1ltnv50s8je.cloudfront.net/uploads/image/image/8771/catfish_banh_mi.jpg" />
+    </li>
+    <li>
+      <img sclass="image_stretch" src="https://d11773osauusiq.cloudfront.net/uploads/image/image/10726/roastchicken_garlicsauce.jpeg" />
+    </li>
+  </ul>
+</div>
+<div id="home_middle">
+	<h2>There Can Only Be One <span class="bolded_headline">BEST</span>. Find Only The Single <span class="bolded_headline">GREATEST RECIPE</span>  for Each Dish. </h2>
+</div>
+
+<div id="home_bottom">
+	<% @featured.each do |feature| %>
+		<div class="feature_view rounded global_shadow">
+			<%= image_tag feature.recipe_images.first.photo.url if feature.recipe_images.count > 0 %>
+			<p class="feature_text"><%= feature.name %></p>
+
+		</div>
+	<% end %>
+</div>

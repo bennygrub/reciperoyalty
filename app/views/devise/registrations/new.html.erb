@@ -14,10 +14,8 @@
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
-
-  <%= f.file_field :avatar %>
   
-  <div><%= f.submit "Sign up" %></div>
+  <div style="margin:20px 0 0 0;"><%= f.submit "Sign up" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>

@@ -1,0 +1,45 @@
+          <li>
+            <a href="#tabs1-html">
+                  <div class="button_selection left rounded">Forks</div>
+            </a>
+          </li>
+          <li>
+            <a href="#tabs1-js">
+              <div class="button_selection left rounded">Chef</div>
+            </a>
+          </li>
+          <li>
+            <a href="#tabs1-css">
+              <div class="button_selection left rounded">Pics</div>
+            </a>
+          </li>
+          <li>
+            <a href="#tabs1-css">
+              <div class="button_selection left rounded">Videos</div>
+            </a>
+          </li>
+          <li>
+            <a href="#tabs1-css">
+              <div class="button_selection left rounded">Comment</div>
+            </a>
+          </li>
+          <li>
+            <a href="#tabs1-css">
+              <div class="button_selection left rounded">Embed</div>
+            </a>
+          </li>    
+            <% if @recipe.king == false %>
+              <div class="left">
+                <div id="love_form">
+                  <% if @already_loved.count < 1 %>
+                    <%= render 'loves' %>
+                  <% else %>
+                    <%= render 'loved' %>
+                  <% end %>
+                </div>
+              </div>
+            <% else %>
+              <div class="button_selection left rounded" style="width:200px;">
+                <div class="embed_button">Challenge</div>
+              </div>
+            <% end %>

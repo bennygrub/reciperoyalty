@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require jquery_nested_form
-//= require flexslider 
+//= require flexslider
+//= require jquery.ui.all
+//= require jquery.easytabs
 //= require_tree .

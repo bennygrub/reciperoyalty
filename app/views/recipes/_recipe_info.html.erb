@@ -1,0 +1,10 @@
+              <h4>Introduction</h4>
+              <p><%= @recipe.introduction %></p>
+              <h4>Ingredients:</h4>
+              <p><%= @recipe.ingredients %></p>
+              <h4>Directions:</h4>
+              <p><%= @recipe.directions %><p>
+            <p>
+              <b>Dish:</b>
+              <%= Dish.find(@recipe.dish_id).name %>
+            </p>

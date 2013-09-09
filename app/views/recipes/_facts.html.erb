@@ -1,0 +1,16 @@
+            <div class="fact left">
+              <span class="fact_bold"><%= @recipe.serving %></span></br>
+              serving
+            </div>
+            <div class="fact left">
+              <span class="fact_bold"><%= @recipe.prep.strftime("%H:%M") %></span></br>
+              prep time
+            </div>
+            <div class="fact left">
+              <span class="fact_bold"><%= @recipe.cook.strftime("%H:%M") %></span></br>
+              cook time
+            </div>
+            <div class="fact left">
+              <span class="fact_bold"><%= @recipe.difficulty %></span></br>
+              difficulty
+            </div>

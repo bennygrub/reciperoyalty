@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require flexslider.css
+ *= require jquery.ui.all
  *= require_tree .
  */

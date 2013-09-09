@@ -21,6 +21,7 @@ class RecipesController < ApplicationController
     @love = Love.new
     @comments = @recipe.comments
     @image = @recipe.recipe_images.first.photo.url if @recipe.recipe_images.count > 0
+    @challengers = Recipe.where("dish_id = ? AND king = ?", @recipe.dish_id, false)
     if current_user
       @already_loved = Love.where("user_id = ? AND recipe_id = ?", current_user, @recipe.id)
     end

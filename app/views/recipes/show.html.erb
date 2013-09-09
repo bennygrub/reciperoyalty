@@ -1,5 +1,5 @@
 <div id="main_recipe" style="background-image: url(<%= @image %>);">
-    <div class="closed_view hidden">
+    <div class="closed_view">
       <div class="closed_tab tab">View Recipe</div>
       <div class="closed">
         <h1 class="recipe_title"><%= @recipe.name %></h1>
@@ -9,63 +9,28 @@
     <div class="tab">Close Recipe</div>
       <div class="open">
         <h1 class="recipe_title"><%= @recipe.name %></h1>
-        <div class="intro">
-          <div class="facts right">
-            <div class="fact left">
-              <span class="fact_bold"><%= @recipe.serving %></span></br>
-              serving
+        <div id="tabber-container" class="tabber-container">
+          <div class="">
+            <div id="tabs1-html">
+              <div class="intro" id="tabs-intro">
+                <%= render "intro"%>
+              </div>
             </div>
-            <div class="fact left">
-              <span class="fact_bold"><%= @recipe.prep.strftime("%H:%M") %></span></br>
-              prep time
+            <div id="tabs1-js" >
+              <div id="tabs-chef">
+                <%= render 'chef' %>
+              </div>
             </div>
-            <div class="fact left">
-              <span class="fact_bold"><%= @recipe.cook.strftime("%H:%M") %></span></br>
-              cook time
-            </div>
-            <div class="fact left">
-              <span class="fact_bold"><%= @recipe.difficulty %></span></br>
-              difficulty
+            <div id="tabs1-css">
+              <div id="tabs-comments">
+                <%= render "comments_tab"%>
+              </div>
             </div>
           </div>
-          <div class="clear_me"></div>
-          <div class="info">
-              <h3>Introduction</h3>
-              <p><%= @recipe.introduction %></p>
-              <h3>Ingredients:</h3>
-              <p><%= @recipe.ingredients %></p>
-              <h3>Directions:</h3>
-              <p><%= @recipe.directions %><p>
-            <p>
-              <b>Dish:</b>
-              <%= Dish.find(@recipe.dish_id).name %>
-            </p>
-          </div>
-        </div>
-        <div class="recipe_footer">Stuff goes here</div>
-        
-        <div class="hidden">
-          <p>
-            <b>The Cook:</b>
-            <%= User.find(@recipe.user_id).name %>
-          </p>
-          <div id="love_form">
-            <% if @already_loved.count < 1 %>
-              <%= render 'loves' %>
-            <% else %>
-              <%= render 'loved' %>
-            <% end %>
-          </div>
+          <ul class='recipe_footer'>
+            <%= render "recipe_footer" %>
+          </ul>
 
-          <div id="comments_wrapper">
-            <div id="comments">
-              <%= render 'comments' %>
-            </div>
-
-            <div id="comments_form">
-              <%= render 'comments_form' %>
-            </div>
-          </div>
         </div>
       </div>
   </div>
@@ -78,3 +43,15 @@
   <%= link_to 'Back', recipes_path %> |
   <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
 </div>
+<div id="home_bottom">
+  <% @challengers.each do |challenger| %>
+    <%= link_to(challenger) do %>
+    <div class="feature_view rounded global_shadow fade">
+      <%= image_tag challenger.recipe_images.first.photo.url if challenger.recipe_images.count > 0 %>
+      <p class="feature_text"><%= challenger.name %></p>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="clear_me"></div>
+<script type="text/javascript">$("#tabber-container").easytabs();</script>

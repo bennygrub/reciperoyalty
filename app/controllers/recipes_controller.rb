@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  layout "fullpage", :only => [:show]
   before_filter :authenticate_user!
   # GET /recipes
   # GET /recipes.json
@@ -19,6 +20,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @love = Love.new
     @comments = @recipe.comments
+    @image = @recipe.recipe_images.first.photo.url if @recipe.recipe_images.count > 0
     if current_user
       @already_loved = Love.where("user_id = ? AND recipe_id = ?", current_user, @recipe.id)
     end

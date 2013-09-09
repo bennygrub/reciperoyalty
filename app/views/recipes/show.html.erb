@@ -1,72 +1,82 @@
-<p>
-  <%= image_tag @recipe.recipe_images.first.photo.url if @recipe.recipe_images.count > 0%>
-</p>
-<p>
-  <b>The Cook:</b>
-  <%= User.find(@recipe.user_id).name %>
-</p>
-<p>
-  <b>Dish:</b>
-  <%= Dish.find(@recipe.dish_id).name %>
-</p>
+<div id="main_recipe" style="background-image: url(<%= @image %>);">
+    <div class="closed_view hidden">
+      <div class="closed_tab tab">View Recipe</div>
+      <div class="closed">
+        <h1 class="recipe_title"><%= @recipe.name %></h1>
+      </div>
+    </div>
+  <div class="open_view">
+    <div class="tab">Close Recipe</div>
+      <div class="open">
+        <h1 class="recipe_title"><%= @recipe.name %></h1>
+        <div class="intro">
+          <p>
+            <b>Dish:</b>
+            <%= Dish.find(@recipe.dish_id).name %>
+          </p>
+          <p>
+            <b>Introduction:</b>
+            <%= @recipe.introduction %>
+          </p>
+          <p>
+            <b>Serving:</b>
+            <%= @recipe.serving %>
+          </p>
 
-<p>
-  <b>Recipe Name:</b>
-  <%= @recipe.name %>
-</p>
+          <p>
+            <b>Prep:</b>
+            <%= @recipe.prep %>
+          </p>
+          <p>
+            <b>Cook:</b>
+            <%= @recipe.cook %>
+          </p>
+          <p>
+            <b>Difficulty:</b>
+            <%= @recipe.difficulty %>
+          </p>
+          <p>
+            <b>Ingredients:</b>
+            <%= @recipe.ingredients %>
+          </p>
+          <p>
+            <b>Directions:</b>
+            <%= @recipe.directions %>
+          </p>
+        </div>
+        <div class="recipe_footer">Stuff goes here</div>
+        
+        <div class="hidden">
+          <p>
+            <b>The Cook:</b>
+            <%= User.find(@recipe.user_id).name %>
+          </p>
+          <div id="love_form">
+            <% if @already_loved.count < 1 %>
+              <%= render 'loves' %>
+            <% else %>
+              <%= render 'loved' %>
+            <% end %>
+          </div>
 
-<p>
-  <b>Introduction:</b>
-  <%= @recipe.introduction %>
-</p>
+          <div id="comments_wrapper">
+            <div id="comments">
+              <%= render 'comments' %>
+            </div>
 
-<p>
-  <b>Serving:</b>
-  <%= @recipe.serving %>
-</p>
-
-<p>
-  <b>Prep:</b>
-  <%= @recipe.prep %>
-</p>
-
-<p>
-  <b>Cook:</b>
-  <%= @recipe.cook %>
-</p>
-
-<p>
-  <b>Difficulty:</b>
-  <%= @recipe.difficulty %>
-</p>
-
-<p>
-  <b>Ingredients:</b>
-  <%= @recipe.ingredients %>
-</p>
-
-<p>
-  <b>Directions:</b>
-  <%= @recipe.directions %>
-</p>
-<div id="love_form">
-  <% if @already_loved.count < 1 %>
-    <%= render 'loves' %>
-  <% else %>
-    <%= render 'loved' %>
-  <% end %>
-</div>
-
-<div id="comments_wrapper">
-  <div id="comments">
-    <%= render 'comments' %>
+            <div id="comments_form">
+              <%= render 'comments_form' %>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
-
-  <div id="comments_form">
-    <%= render 'comments_form' %>
-  </div>
 </div>
-
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %> |
-<%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
+<div id="home_middle">
+  <h2>
+    <span style="text-transform:uppercase;">Meet the <span class="bolded_headline">Challengers</span></span> </br>
+  </h2>
+  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+  <%= link_to 'Back', recipes_path %> |
+  <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
+</div>

@@ -1,9 +1,9 @@
 <div id="profile_top">
 	<div id="profile_left" class="left">
 		<div class="left">
-			<div class="img_profile"><%= image_tag @user.avatar.url(:medium), class: 'rounded global_shadow img_shape' %></div>
+			<div class="img_profile rounded global_shadow"><%= image_tag @user.avatar.url(:medium), class: 'img_shape' %></div>
 		</div>
-		<div class="right">
+		<div class="left" style="margin: 0 0 0 20px;">
 			<h1><%= @user.name %><span style="font-size:10px;"><%= link_to('(edit)', edit_user_registration_path) %></span></h1>		
 			<p><%= @user.website %></p>
 			<p>King Recipes: <%= @current_kings.count %></p>
@@ -18,15 +18,14 @@
 	
 </div>
 <div id="profile_bottom">
-
 	<h3>Current KING Recipes (<%= @current_kings.count %>)</h3>
 	<div class="profile_recipes">
 	<% @current_kings.each do |king| %>
-		<div class="small_recipe_view">
+		<div class="small_recipe_view left">
 			<div class="left small_recipe_view_img">
 				<%= image_tag king.recipe_images.first.photo.url(:thumb), class: 'rounded global_shadow' if king.recipe_images.count > 0 %>
 			</div>
-			<div class="right small_recipe_view_text">
+			<div class="left small_recipe_view_text">
 				<span style="font-weight:bold; font-size:15px;"><%= link_to king.name, recipe_path(king) %></span></br>
 				Dish: <%= Dish.find(king.dish_id).name %></br>
 				Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>
@@ -35,6 +34,7 @@
 			<div class="clear_me"></div>
 		</div>
 	<% end %>
+		<div class="clear_me"></div>
 	</div>
 
 	<h3>Current Challenger Recipes (<%= @current_challenges.count %>)</h3>
@@ -44,7 +44,7 @@
 			<div class="left small_recipe_view_img">
 				<%= image_tag king.recipe_images.first.photo.url(:thumb), class: 'rounded global_shadow' if king.recipe_images.count > 0 %>
 			</div>
-			<div class="right small_recipe_view_text">
+			<div class="left small_recipe_view_text">
 				<span style="font-weight:bold; font-size:15px;"><%= link_to king.name, recipe_path(king) %></span></br>
 				Dish: <%= Dish.find(king.dish_id).name %></br>
 				Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>
@@ -63,7 +63,7 @@
 			<div class="left small_recipe_view_img">
 				<%= image_tag king.recipe_images.first.photo.url(:thumb), class: 'rounded global_shadow' if king.recipe_images.count > 0 %>
 			</div>
-			<div class="right small_recipe_view_text">
+			<div class="left small_recipe_view_text">
 				<span style="font-weight:bold; font-size:15px;"><%= link_to king.name, recipe_path(king) %></span></br>
 				Dish: <%= Dish.find(king.dish_id).name %></br>
 				Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>

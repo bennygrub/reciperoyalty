@@ -329,9 +329,40 @@ h1.recipe_title {
 .recipe_footer {
 	position: absolute; 
 	bottom: 0px;
-	height: 125px;
+	height: 50px;
 	border-top: 1px solid #fff;
 	width: 75%;
 	padding: 10px;
 	margin-left: 10px;
+}
+
+.intro {
+	position: relative;
+}
+
+.info {
+	margin: 0 15px;
+}
+
+.facts {
+	position: absolute; 
+	background: #fff;
+	color: #000;
+	width: 300px;
+	padding: 5px;
+	top: -10px;
+	right: 0px;
+}
+
+.fact {
+	margin: 0 10px;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	line-height: 13px;
+}
+
+.fact_bold {
+	font-weight: 900;
+	text-transform: uppercase;
+	font-size: 14px
 }

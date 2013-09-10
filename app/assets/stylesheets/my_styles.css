@@ -329,9 +329,13 @@ h1.recipe_title {
 	background: rgba(0, 0, 0, .75);
 	width: 80%;
 	margin: auto;
-	min-height: 653px;
+	height: 653px;
 }
-
+.scrollable-area {
+	height:493px;
+	width: 100%;
+	overflow: scroll;
+}
 .recipe_footer {
 	position: absolute; 
 	bottom: 0px;
@@ -347,7 +351,7 @@ h1.recipe_title {
 }
 
 .info {
-	margin: 0 15px;
+	margin: 0 35px 0 25px;
 }
 
 .facts {
@@ -371,6 +375,19 @@ h1.recipe_title {
 	font-weight: 900;
 	text-transform: uppercase;
 	font-size: 14px
+}
+
+.chef-love {
+	margin:20px auto 0 auto;
+	width: 55%;
+}
+
+.chef_image img {
+	margin: 10px 10px 10px 0;
+}
+
+.chef_info {
+	padding: 60px 0 0 0;
 }
 
 .button_selection {
@@ -426,9 +443,9 @@ a.button_selection.active {
 	border-color: none;
 	border: none;
 	border-bottom-color: none;
-    -moz-box-shadow: inset 2px 2px 4px #181818;;
-    -webkit-box-shadow: inset 2px 2px 4px #181818;;
-    box-shadow: inset 2px 2px 4px #181818;;
+    -moz-box-shadow: inset 2px 2px 4px #181818;
+    -webkit-box-shadow: inset 2px 2px 4px #181818;
+    box-shadow: inset 2px 2px 4px #181818;
 
    	background-image: -moz-linear-gradient(top, #ee3335, #ee3335);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee3335), to(#ee3335));
@@ -440,8 +457,31 @@ a.button_selection.active {
 }
 
 
+#modal-container {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.4);
+}
 
+#modal {
+	display: none;
+	position: absolute;
+	width: 600px;
+	left: 50%;
+	margin-left: (-600px - 40px) / 2;
+	padding: 20px;
+	background: #fff;
+	border: 5px solid #eee;
+ }
 
-
-
+ #modal.close {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	color: #666;
+}
 

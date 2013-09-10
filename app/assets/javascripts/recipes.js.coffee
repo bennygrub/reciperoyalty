@@ -9,32 +9,9 @@ $ ->
   $(".tab").click ->
     $(".open_view").toggle()
 
-	
+
 $ ->
-  $("#showdiv1").click ->
-    $("div[id^=div]").hide()
-    $("#div1").show()
-
-  $("#showdiv2").click ->
-    $("div[id^=div]").hide()
-    $("#div2").show()
-
-  $("#showdiv3").click ->
-    $("div[id^=div]").hide()
-    $("#div3").show()
-
-  $("#showdiv4").click ->
-    $("div[id^=div]").hide()
-    $("#div4").show()
-
-  $("#showdiv5").click ->
-    $("div[id^=div]").hide()
-    $("#div4").show()
-
-  $("#showdiv6").click ->
-    $("div[id^=div]").hide()
-    $("#div4").show()
-
-
-
-$("#tabber-container").easytabs()
+  $(".scrollable-area").slimScroll
+  	height: "495px"
+  	color: "#fff"
+  	alwaysVisible: "true"

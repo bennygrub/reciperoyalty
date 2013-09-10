@@ -8,30 +8,35 @@
   <div class="open_view">
     <div class="tab">Close Recipe</div>
       <div class="open">
-        <h1 class="recipe_title"><%= @recipe.name %></h1>
-        <div id="tabber-container" class="tabber-container">
-          <div class="">
-            <div id="tabs-intro">
-              <div class="intro" id="tabs-intro">
-                <%= render "intro"%>
+          <h1 class="recipe_title"><%= @recipe.name %></h1>
+          <div id="tabber-container" class="tabber-container">
+            <div class="scrollable-area">
+              <div id="tabs-intro">
+                <div class="intro" id="tabs-intro">
+                  <%= render "intro"%>
+                </div>
               </div>
-            </div>
-            <div id="tabs-chef" >
-              <div id="tabs-chef">
-                <%= render 'chef' %>
+              <div id="tabs-chef" >
+                <div id="tabs-chef">
+                  <%= render 'chef' %>
+                </div>
               </div>
-            </div>
-            <div id="tabs-comments">
+              <div id="tabs-pics" >
+                <div id="tabs-pics">
+                  <%= render 'recipe_pics' %>
+                </div>
+              </div>
               <div id="tabs-comments">
-                <%= render "comments_tab"%>
+                <div id="tabs-comments">
+                  <%= render "comments_tab"%>
+                </div>
               </div>
             </div>
+            
+            <ul class='recipe_footer'>
+              <%= render "recipe_footer" %>
+            </ul>
           </div>
-          <ul class='recipe_footer'>
-            <%= render "recipe_footer" %>
-          </ul>
-
-        </div>
       </div>
   </div>
 </div>

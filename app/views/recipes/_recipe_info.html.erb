@@ -1,7 +1,7 @@
               <h4>Introduction</h4>
               <p><%= @recipe.introduction %></p>
               <h4>Ingredients:</h4>
-              <p><%= @recipe.ingredients %></p>
+              <p><%= simple_format(@recipe.ingredients) %></p>
               <h4>Directions:</h4>
               <p><%= @recipe.directions %><p>
             <p>

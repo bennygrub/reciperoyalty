@@ -1,6 +1,8 @@
 Rr::Application.routes.draw do
 
 
+  get "registrations/update"
+
   get "sessions/create"
 
   get "sessions/failure"

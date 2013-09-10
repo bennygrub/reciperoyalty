@@ -6,6 +6,21 @@ ul {
 	list-style-type: none;
 }
 
+.alertfull {
+	z-index: 10;
+	position: absolute;
+	width: 90%;
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 20px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #FCF8E3;
+	border: 1px solid #FBEED5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
 #home_middle h2 {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
@@ -77,13 +92,23 @@ nav.navbar-inner {
 	font-weight: normal;
 }
 
-a, a:visited {
+a, a:visited, .content a:visited  {
 	color: #ee3335;
 }
 
 a:hover {
 	color: #000;
 	background-color: #fff;
+}
+
+a.about:hover {
+	color: #ee3335;
+	background-color: #fff;
+}
+
+p a:hover {
+	color: #000;
+	background-color: #fff;	
 }
 
 .form-inputs a {
@@ -101,7 +126,7 @@ a:hover {
 #profile_top {
 	border-bottom: solid 3px black;
 	width: 100%;
-	padding: 10px 0;
+	padding: 20px 0 5px; 
 }
 
 #profile_left h1 {
@@ -109,11 +134,16 @@ a:hover {
 }
 
 #profile_left {
-	width:42%;
+	width: 50%;
+	padding-top: 15px;
 }
 
 #profile_right {
-	width:40%;
+	width:50%;
+}
+
+#profile_right p {
+	font-size: 10px;
 }
 
 .img_shape {
@@ -128,7 +158,7 @@ a:hover {
 
 .small_recipe_view {
 	width:325px;
-	margin: 20px;
+	margin: 20px 40px 20px 0;
 }
 .small_recipe_view_img {
 	width:100px;
@@ -179,6 +209,15 @@ input[type="submit"] {
 	font-weight: 700; 
 }
 
+#love_form input[type="submit"] {
+	font-size: 22px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	width: 200px;
+	height: 55px;
+	text-transform: uppercase;
+}
+
 .form-actions {
 	background-color: #fff;
 	border-top: 0px solid;
@@ -218,7 +257,7 @@ input[type="submit"] {
 	float: left;
 	width: 250px;
 	height: 275px;
-	margin:20px;
+	margin:20px 40px 20px 0;
 	overflow: hidden;
 	background-color: #000;
 }
@@ -392,6 +431,33 @@ h1.recipe_title {
 .sign_container {
 	width:80%;
 }
+
+
+
+.challenger_bar {
+	background: rgba(0, 0, 0, .75);
+	width: 100%;
+	margin: 20px auto;
+	color: #fff;
+}
+.challenger_bar h1 {
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+	text-transform: uppercase;
+}
+
+.inner_challenger_bar {
+	width:60%;
+	margin: auto;
+	padding: 3px 0;
+}
+
+.inner_challenger_bar p {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+
 .button_selection {
 	font-size: 14px;
 	line-height: 20px;

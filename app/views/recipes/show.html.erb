@@ -1,61 +1,61 @@
 <div id="main_recipe" style="background-image: url(<%= @image %>);">
     <div class="closed_view">
-      <div class="closed_tab tab">View Recipe</div>
-      <div class="closed">
-        <h1 class="recipe_title"><%= @recipe.name %></h1>
-      </div>
+      <%= render 'closed_view' %>
     </div>
   <div class="open_view">
     <div class="tab">Close Recipe</div>
       <div class="open">
-          <h1 class="recipe_title"><%= @recipe.name %></h1>
-          <div id="tabber-container" class="tabber-container">
-            <div class="scrollable-area">
-              <div id="tabs-intro">
-                <div class="intro" id="tabs-intro">
-                  <%= render "intro"%>
-                </div>
-              </div>
-              <div id="tabs-chef" >
-                <div id="tabs-chef">
-                  <%= render 'chef' %>
-                </div>
-              </div>
-              <div id="tabs-pics" >
-                <div id="tabs-pics">
-                  <%= render 'recipe_pics' %>
-                </div>
-              </div>
-              <div id="tabs-comments">
-                <div id="tabs-comments">
-                  <%= render "comments_tab"%>
-                </div>
-              </div>
-            </div>
-            
-            <ul class='recipe_footer'>
-              <%= render "recipe_footer" %>
-            </ul>
-          </div>
+        <%= render 'open_recipe'%>
       </div>
   </div>
 </div>
 <div id="home_middle">
-  <h2>
-    <span style="text-transform:uppercase;">Meet the <span class="bolded_headline">Challengers</span></span> </br>
-  </h2>
-  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-  <%= link_to 'Back', recipes_path %> |
-  <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
+  <% if @recipe.king == true %>
+    <h2>
+      <span style="text-transform:uppercase;">Meet the <span class="bolded_headline">Challengers</span></span> </br>
+    </h2>
+  <% else %>
+    <h2>
+      <span style="text-transform:uppercase;">The <span class="bolded_headline">Challengers</span> Prospects</span> </br>
+    </h2>
+  <% end %>
+  <% if user_signed_in? %> 
+  <% if @recipe.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+    <%= link_to 'Back', recipes_path %> |
+    <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
+  <% end %>
+  <% end %>
 </div>
 <div id="home_bottom">
-  <% @challengers.each do |challenger| %>
-    <%= link_to(challenger) do %>
-    <div class="feature_view rounded global_shadow fade">
-      <%= image_tag challenger.recipe_images.first.photo.url if challenger.recipe_images.count > 0 %>
-      <p class="feature_text"><%= challenger.name %></p>
+  <% if @recipe.king == false %>
+    <div class="challenger_prospects">
+      <div class="left">
+        <h3>The Reigning King</h3>
+        <%= image_tag @winner.recipe_images.first.photo.url(:thumb), class: 'rounded' %>
+        <%= @winner.name %></br>
+        By <%= User.find(@winner.user_id).name %></br>
+        Time as King: <%= time_ago_in_words(@winner.created_at) %>
+      </div>
+      <div class="right">
+        <h3><%= @recipe.name %></h3>
+          <%= image_tag @recipe.recipe_images.first.photo.url(:thumb), class: 'rounded' %>
+          Loves: <%= Love.where("recipe_id = ?", @recipe.id).count %>/1000</br>
+          Time Remaining: <%= distance_of_time_in_words(30.days.ago, @recipe.created_at, include_seconds: true) %>
+      </div>
     </div>
+    <div class="clear_me"></div>
+  <% elsif @challengers.count > 0 %>
+    <% @challengers.each do |challenger| %>
+      <%= link_to(challenger) do %>
+      <div class="feature_view rounded global_shadow fade">
+        <%= image_tag challenger.recipe_images.first.photo.url(:medium) if challenger.recipe_images.count > 0 %>
+        <p class="feature_text"><%= challenger.name %></p>
+      </div>
+      <% end %>
     <% end %>
+  <% else %>
+    There are currently no challengers for this recipe. Step up, Put your recipe where your mouth is and <%= link_to 'Challenge This Recipe >>', new_recipe_path(:challenge => @recipe.dish_id) %>.
   <% end %>
 </div>
 <div class="clear_me"></div>

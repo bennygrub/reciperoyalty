@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   layout "fullpage", :only => [:show]
+  #before_filter :auth_user, :except => [:show, :index]
   before_filter :authenticate_user!, :except => [:show, :index]
   # GET /recipes
   # GET /recipes.json
@@ -23,6 +24,14 @@ class RecipesController < ApplicationController
     @image = @recipe.recipe_images.first.photo.url if @recipe.recipe_images.count > 0
     @challengers = Recipe.where("dish_id = ? AND king = ?", @recipe.dish_id, false)
     @chef = User.find(@recipe.user_id)
+    @dish_object = Dish.find(@recipe.dish_id)
+    @dish_name = @dish_object.name # dish name
+
+    #if recipe is a challenger
+    @competition = Recipe.where("dish_id = ? AND king = ?", @recipe.dish_id, true)
+    @winner = @competition.first
+
+
     if current_user
       @already_loved = Love.where("user_id = ? AND recipe_id = ?", current_user, @recipe.id)
     end
@@ -113,5 +122,11 @@ class RecipesController < ApplicationController
       format.html { redirect_to @recipe, notice: "Comment Saved" }
       format.js
     end
+  end
+
+  private
+
+  def auth_user
+    redirect_to new_user_registration_url unless user_signed_in?
   end
 end

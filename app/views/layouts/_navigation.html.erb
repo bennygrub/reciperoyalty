@@ -6,7 +6,7 @@
     </li>
   <% else %>
     <li>
-      <%= link_to_modal('Login', new_user_session_path)  %>
+      <%= link_to('Login', new_user_session_path)  %>
     </li>
   <% end %>
   <% if user_signed_in? %>
@@ -15,11 +15,14 @@
     </li>
   <% else %>
     <li>
-      <%= link_to_modal('Sign up', new_user_registration_path)  %>
+      <%= link_to('Sign up', new_user_registration_path)  %>
     </li>
   <% end %>
   <li>
-      <%= link_to('All Recipes', recipes_path)  %>
+      <%= link_to('Categories', recipes_path)  %>
+  </li>
+  <li>
+      <%= link_to_modal('We Know Best', static_about_path)  %>
   </li>
   <li>
       <%= link_to('Best Dishes', dishes_path)  %>

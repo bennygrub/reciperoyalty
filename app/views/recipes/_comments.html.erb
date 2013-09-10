@@ -1,7 +1,6 @@
-
 <% @comments.each do |comment| %>
 <p>
 	<% @commentor = User.find(comment.user_id) %>
-	<%= image_tag @commentor.avatar.url(:medium) %> <%= @commentor.name %> -- <%= comment.comment %>
+	<%= image_tag @commentor.avatar.url(:mini), class: 'rounded' %> <%= comment.comment %>
 <p>
 <% end %>

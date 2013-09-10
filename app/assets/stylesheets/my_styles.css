@@ -389,7 +389,9 @@ h1.recipe_title {
 .chef_info {
 	padding: 60px 0 0 0;
 }
-
+.sign_container {
+	width:80%;
+}
 .button_selection {
 	font-size: 14px;
 	line-height: 20px;
@@ -456,32 +458,4 @@ a.button_selection.active {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee3335', endColorstr='#ee3335', GradientType=0);
 }
 
-
-#modal-container {
-	display: none;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0,0.4);
-}
-
-#modal {
-	display: none;
-	position: absolute;
-	width: 600px;
-	left: 50%;
-	margin-left: (-600px - 40px) / 2;
-	padding: 20px;
-	background: #fff;
-	border: 5px solid #eee;
- }
-
- #modal.close {
-	position: absolute;
-	right: 5px;
-	top: 5px;
-	color: #666;
-}
 

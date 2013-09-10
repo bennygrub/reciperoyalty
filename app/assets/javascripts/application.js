@@ -18,4 +18,5 @@
 //= require jquery.ui.all
 //= require jquery.easytabs
 //= require jquery.slimscroll
+//= require jquery.modal
 //= require_tree .

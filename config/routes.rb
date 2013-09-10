@@ -1,6 +1,10 @@
 Rr::Application.routes.draw do
 
 
+  get "sessions/create"
+
+  get "sessions/failure"
+
   resources :loves
   resources :dishes
   resources :recipes

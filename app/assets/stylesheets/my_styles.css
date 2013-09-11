@@ -517,7 +517,7 @@ a.button_selection.active {
 
    	background-image: -moz-linear-gradient(top, #ee3335, #ee3335);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee3335), to(#ee3335));
-	background-image: -webkit-linear-gradient(top, #ee3335, #ee3335;
+	background-image: -webkit-linear-gradient(top, #ee3335, #ee3335);
 	background-image: -o-linear-gradient(top, #ee3335, #ee3335);
 	background-image: linear-gradient(to bottom, #ee3335, #ee3335);
 	background-repeat: repeat-x;

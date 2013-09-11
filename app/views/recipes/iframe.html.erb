@@ -1,0 +1,13 @@
+<div id="iframe_background">
+	<%= image_tag @image %>
+	<div class="iframe_text">
+		<h2 style="margin: 0;padding: 0;line-height: 10px;"><%= @recipe.name%></h2>
+		<span style="font-size:20px;"><span style="text-transform:lowercase;font-size:14px;font-style: italic;">- by -</span>  <%= @chef.name %></span></br>
+		<% if @recipe.king == true %>
+			The VERY BEST <%= @dish.name%></br>
+		<% else %>
+			The Best <%= @dish.name%> Challenger</br> 
+		<% end %>
+		<p style="font-weight:normal;font-size:14px;"><%= link_to 'The Whole Story >>', @recipe %></p>
+	</div>
+</div>

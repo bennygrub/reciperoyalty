@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  layout "fullpage", :only => [:show]
+  layout :resolve_layout
   #before_filter :auth_user, :except => [:show, :index]
   before_filter :authenticate_user!, :except => [:show, :index]
   # GET /recipes
@@ -126,12 +126,26 @@ class RecipesController < ApplicationController
   end
 
   def iframe
-
+    @recipe = Recipe.find(params[:id])
+    @image = @recipe.recipe_images.first.photo.url if @recipe.recipe_images.count > 0
+    @chef = User.find(@recipe.user_id)
+    @dish = Dish.find(@recipe.dish_id)
   end
 
   private
 
   def auth_user
     redirect_to new_user_registration_url unless user_signed_in?
+  end
+
+  def resolve_layout
+    case action_name
+    when "show"
+      "fullpage"
+    when "iframe"
+      "iframe"
+    else
+      "application"
+    end
   end
 end

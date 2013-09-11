@@ -190,27 +190,39 @@ input[type="text"], input[type="password"], input[type="email"] {
 }
 
 textarea {
- height: 200px;
- width: 400px;
- -webkit-border-radius: 5px;
- -moz-border-radius: 5px;
- border-radius: 5px;
- background: #f7fbfe;
- padding-left: 10px;
- font-size: 15px;
- /*box-shadow:0px 0px 1px #5E5E5E;*/
+	height: 200px;
+	width: 400px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #f7fbfe;
+	padding-left: 10px;
+	font-size: 15px;
+	/*box-shadow:0px 0px 1px #5E5E5E;*/
 }
 
 textarea#comment_comment {
- height: 100px;
- width: 300px;
- -webkit-border-radius: 5px;
- -moz-border-radius: 5px;
- border-radius: 5px;
- background: #f7fbfe;
- padding-left: 10px;
- font-size: 15px;
- /*box-shadow:0px 0px 1px #5E5E5E;*/
+	height: 100px;
+	width: 300px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #f7fbfe;
+	padding-left: 10px;
+	font-size: 15px;
+	/*box-shadow:0px 0px 1px #5E5E5E;*/
+}
+
+.iframe_trans textarea {
+	height: 100px;
+	width: 400px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #f7fbfe;	
+	padding-left: 10px;
+	font-size: 15px;
+	/*box-shadow:0px 0px 1px #5E5E5E;*/
 }
 
 
@@ -611,7 +623,7 @@ a.button_selection.active {
 	position: relative;
 	float: left;
 	width: 250px;
-	height: 200px;
+	height: 160px;
 	margin: 20px 40px 20px 0;
 	overflow: hidden;
 	background-color: #000;
@@ -656,4 +668,36 @@ a.button_selection.active {
 .comment-love {
 	margin:20px auto 0 auto;
 	width: 75%;
+}
+
+.iframe_body {
+	padding:0px;
+	margin: 0px;
+}
+
+#iframe_background {
+	height:400px;
+	width:600px;
+	overflow: hidden;
+	position:relative;
+}
+.iframe_text {
+	position: absolute;
+	top: 200px;
+	left: 0;
+	width: 600px;
+	text-align: center;
+	color: white;
+	font: 300 25px 'Roboto', sans-serif;
+	letter-spacing: -1px;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.6);
+	padding: 20px 0px;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 2px #000;
+	filter: dropshadow(color=#000, offx=2, offy=2);
+}
+
+#iframe_background img {
+	max-width: 120%;
 }

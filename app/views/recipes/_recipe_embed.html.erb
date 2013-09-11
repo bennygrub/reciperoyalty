@@ -1,7 +1,7 @@
 <div class="chef-love">
 	<h3>Embed this Recipe into Your Site</h3>
 	<p>< Copy and Paste the Code Below Between Your Body Tags ></p>
-	<%= @iframe_url %>
-	<div><iframe width="600px" height="400px"  src=<%="http://localhost:3000/recipes/#{@recipe.id}" %> ></iframe></div>
-	<div><iframe width="600px" height="400px"  src=<%="http://host.sonspring.com/iframe/iframe_2.html" %> ></iframe></div>		
+	<div class="comments_box rounded iframe_trans">
+	<textarea rows="4" cols="50"><iframe width="600px" height="400px"  src=<%="http://localhost:3000/recipes/#{@recipe.id}/iframe" %> ></iframe></div></textarea>
+	</div>
 </div>

@@ -12,5 +12,6 @@
  *= require flexslider.css
  *= require jquery.ui.all
  *= require jquery.modal
+ *= require fancybox
  *= require_tree .
  */

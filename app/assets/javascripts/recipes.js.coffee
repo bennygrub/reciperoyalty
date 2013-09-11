@@ -5,18 +5,22 @@ $ ->
 	$(".tab").click ->
 		$(".open_view").animate
 			bottom: "550px"
+			, 2000
 		$(".recipe_footer").show()
 		$(".tab").hide()
 		$(".close_tab").show()
+		$(".challenger_bar").fadeOut(500)
 
 
 $ ->
 	$(".close_tab").click ->
 		$(".open_view").animate
 			bottom: "-26px"
+			, 3000
 		$(".recipe_footer").hide()
 		$(".tab").show()
 		$(".close_tab").hide()
+		$(".challenger_bar").fadeIn(2000)
 
 $ ->
   $(".scrollable-area").slimScroll
@@ -32,3 +36,6 @@ $ ->
 	$(".before_comment").click ->
 		$(".before_comment").hide()
 		$(".comment_area").show()
+
+$ ->
+	$('a.fancybox').fancybox()

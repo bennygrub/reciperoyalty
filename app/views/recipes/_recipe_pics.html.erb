@@ -1,6 +1,10 @@
 <div class="comment-love">
 	<h3>Recipe Pictures</h3>
 	<% @recipe.recipe_images.each do |image| %>
-		<div class="feature_view rounded fade" style="background-color:#000;"><%= image_tag image.photo.url(:big) %></div>
+		<div class="pictures_view rounded fade" style="background-color:#000;">
+			<%= link_to image.photo.url, class: "fancybox" do %>
+				<%= image_tag image.photo.url(:big) %>
+			<% end %>
+		</div>
 	<% end %>
 </div>

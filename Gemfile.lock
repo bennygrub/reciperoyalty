@@ -55,6 +55,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.1)
+    fancybox-rails (0.2.1)
+      railties (>= 3.1.0)
     flexslider (2.0.2)
     hike (1.2.3)
     i18n (0.6.5)
@@ -149,6 +151,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
   devise
+  fancybox-rails
   flexslider
   jquery-modal-rails
   jquery-rails

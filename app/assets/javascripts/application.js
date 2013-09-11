@@ -19,4 +19,5 @@
 //= require jquery.easytabs
 //= require jquery.slimscroll
 //= require jquery.modal
+//= require fancybox
 //= require_tree .

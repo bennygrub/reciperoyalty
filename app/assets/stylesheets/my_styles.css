@@ -670,6 +670,21 @@ a.button_selection.active {
 	width: 75%;
 }
 
+.pictures_view {
+	position: relative;
+	float: left;
+	width: 30%;
+	height: 225px;
+	margin: 20px 20px 20px 0;
+	overflow: hidden;
+	background-color: #000;
+}
+
+.pictures_view img {
+	max-width: 200%;
+}
+
+
 .iframe_body {
 	padding:0px;
 	margin: 0px;

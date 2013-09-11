@@ -24,6 +24,7 @@ gem 'acts_as_commentable', '3.0.1'
 gem 'flexslider'
 gem 'jquery-ui-rails'
 gem 'jquery-modal-rails'
+gem 'fancybox-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

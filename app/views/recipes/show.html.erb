@@ -18,40 +18,18 @@
     </h2>
   <% end %>
   <% if user_signed_in? %> 
-  <% if @recipe.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-    <%= link_to 'Back', recipes_path %> |
-    <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
-  <% end %>
+    <% if @recipe.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+      <%= link_to 'Back', recipes_path %> |
+      <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
+    <% end %>
   <% end %>
 </div>
 <div id="home_bottom">
   <% if @recipe.king == false %>
-    <div class="challenger_prospects">
-      <div class="left">
-        <h3>The Reigning King</h3>
-        <%= image_tag @winner.recipe_images.first.photo.url(:thumb), class: 'rounded' %>
-        <%= @winner.name %></br>
-        By <%= User.find(@winner.user_id).name %></br>
-        Time as King: <%= time_ago_in_words(@winner.created_at) %>
-      </div>
-      <div class="right">
-        <h3><%= @recipe.name %></h3>
-          <%= image_tag @recipe.recipe_images.first.photo.url(:thumb), class: 'rounded' %>
-          Loves: <%= Love.where("recipe_id = ?", @recipe.id).count %>/1000</br>
-          Time Remaining: <%= distance_of_time_in_words(30.days.ago, @recipe.created_at, include_seconds: true) %>
-      </div>
-    </div>
-    <div class="clear_me"></div>
+    <%= render 'challenger_prospects' %>
   <% elsif @challengers.count > 0 %>
-    <% @challengers.each do |challenger| %>
-      <%= link_to(challenger) do %>
-      <div class="feature_view rounded global_shadow fade">
-        <%= image_tag challenger.recipe_images.first.photo.url(:medium) if challenger.recipe_images.count > 0 %>
-        <p class="feature_text"><%= challenger.name %></p>
-      </div>
-      <% end %>
-    <% end %>
+    <%= render 'king_challengers' %>
   <% else %>
     There are currently no challengers for this recipe. Step up, Put your recipe where your mouth is and <%= link_to 'Challenge This Recipe >>', new_recipe_path(:challenge => @recipe.dish_id) %>.
   <% end %>

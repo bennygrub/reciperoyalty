@@ -9,7 +9,11 @@ Rr::Application.routes.draw do
 
   resources :loves
   resources :dishes
-  resources :recipes
+  resources :recipes do
+    member do
+      get :iframe
+    end
+  end
 
   get "static/home"
 

@@ -26,13 +26,14 @@ class RecipesController < ApplicationController
     @chef = User.find(@recipe.user_id)
     @dish_object = Dish.find(@recipe.dish_id)
     @dish_name = @dish_object.name # dish name
+    @iframe_url = request.original_url
 
     #if recipe is a challenger
     @competition = Recipe.where("dish_id = ? AND king = ?", @recipe.dish_id, true)
     @winner = @competition.first
 
 
-    if current_user
+    if !current_user.nil?
       @already_loved = Love.where("user_id = ? AND recipe_id = ?", current_user, @recipe.id)
     end
 
@@ -122,6 +123,10 @@ class RecipesController < ApplicationController
       format.html { redirect_to @recipe, notice: "Comment Saved" }
       format.js
     end
+  end
+
+  def iframe
+
   end
 
   private

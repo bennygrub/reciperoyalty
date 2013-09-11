@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
   attr_accessible :comment, :user_id
 
   belongs_to :commentable, :polymorphic => true
-
+  validates :comment, :presence => true
   default_scope :order => 'created_at ASC'
 
   # NOTE: install the acts_as_votable plugin if you

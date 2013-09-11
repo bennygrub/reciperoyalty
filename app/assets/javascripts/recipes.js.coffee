@@ -23,3 +23,12 @@ $ ->
   	height: "495px"
   	color: "#fff"
   	alwaysVisible: "true"
+
+$ ->
+	$(".already_loved").click ->
+		alert "You Already Loved This Recipe! It must be really great. We will take note."
+
+$ ->
+	$(".before_comment").click ->
+		$(".before_comment").hide()
+		$(".comment_area").show()

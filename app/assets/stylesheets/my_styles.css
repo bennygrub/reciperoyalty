@@ -201,6 +201,19 @@ textarea {
  /*box-shadow:0px 0px 1px #5E5E5E;*/
 }
 
+textarea#comment_comment {
+ height: 100px;
+ width: 300px;
+ -webkit-border-radius: 5px;
+ -moz-border-radius: 5px;
+ border-radius: 5px;
+ background: #f7fbfe;
+ padding-left: 10px;
+ font-size: 15px;
+ /*box-shadow:0px 0px 1px #5E5E5E;*/
+}
+
+
 input[type="submit"] {
 	width: 400px;
 	height: 50px;
@@ -209,11 +222,20 @@ input[type="submit"] {
 	font-weight: 700; 
 }
 
+#comments_form input[type="submit"] {
+	background-color: #C7C7C7;
+	width: 320px;
+}
+
+#comments_form input[type="submit"]:hover {
+	background-color: #929292;
+}
+
 #love_form input[type="submit"] {
-	font-size: 22px;
+	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
-	width: 215px;
+	width: 140px;
 	height: 55px;
 	text-transform: uppercase;
 	text-align: center;
@@ -368,6 +390,7 @@ h1.recipe_title {
 	text-transform: uppercase;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
+	cursor: pointer;
 }
 
 .close_tab {
@@ -382,6 +405,7 @@ h1.recipe_title {
 	text-transform: uppercase;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
+	cursor: pointer;
 	display: none;
 }
 
@@ -545,7 +569,6 @@ a.button_selection.active {
     -moz-box-shadow: inset 2px 2px 4px #181818;
     -webkit-box-shadow: inset 2px 2px 4px #181818;
     box-shadow: inset 2px 2px 4px #181818;
-
    	background-image: -moz-linear-gradient(top, #ee3335, #ee3335);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee3335), to(#ee3335));
 	background-image: -webkit-linear-gradient(top, #ee3335, #ee3335);
@@ -555,4 +578,82 @@ a.button_selection.active {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee3335', endColorstr='#ee3335', GradientType=0);
 }
 
+.love_button {
+	width: 140px;
+	text-align: right;
+	font-size: 13px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	line-height: 13px;
+	padding: 0 10px 0 0;
+}
 
+.already_loved {
+	padding-top: 5px;
+	line-height: 23px;
+	font-size: 31px;
+	font-weight: 900;
+}
+.challenger_prospects {
+	margin: 20px 0 0 0;
+}
+.prospect_box {
+	background: rgb(243, 243, 243);
+	padding: 15px;
+	border: 1px solid rgb(235, 235, 235);
+	width: 44%;
+	text-align: left;
+}
+
+.prospect_view {
+	position: relative;
+	float: left;
+	width: 250px;
+	height: 200px;
+	margin: 20px 40px 20px 0;
+	overflow: hidden;
+	background-color: #000;
+	margin: 10px 10px 10px 0;
+}
+
+.black_bars {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.comment_avatar {
+	position: relative;
+	float: left;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	background-color: #000;
+}
+
+.comment_box {
+	border: 1px solid #fff;
+	padding: 15px;
+	min-width: 200px;
+	max-width: 500px;
+	margin: 0 0 0 10px;
+	min-height: 35px;
+}
+
+#comments_wrapper {
+	margin: 0 0 100px 0;
+}
+
+.comment_area{
+	display: none;
+}
+
+.comments {
+	margin: 20px 0 20px 0;
+}
+
+.comment-love {
+	margin:20px auto 0 auto;
+	width: 75%;
+}

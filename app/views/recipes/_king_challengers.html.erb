@@ -1,0 +1,8 @@
+    <% @challengers.each do |challenger| %>
+      <%= link_to(challenger) do %>
+      <div class="feature_view rounded global_shadow fade">
+        <%= image_tag challenger.recipe_images.first.photo.url(:medium) if challenger.recipe_images.count > 0 %>
+        <p class="feature_text"><%= challenger.name %></p>
+      </div>
+      <% end %>
+    <% end %>

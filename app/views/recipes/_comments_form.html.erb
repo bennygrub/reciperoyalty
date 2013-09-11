@@ -1,5 +1,16 @@
+<% if !current_user.nil? %>
+
+<div class="comment_area">
+  <h4>Post Your Comment</h4>
   <%= form_tag "/recipes/add_new_comment" do %>
     <%= hidden_field_tag "id", @recipe.id %>
-    <%= text_area_tag "comment[comment]" %>
-    <%= submit_tag "Post Comment", class: "btn btn-primary" %>
+    <%= text_area_tag "comment[comment]"%></br>
+    <%= submit_tag "Post Comment", class: "rounded" %>
   <% end %>
+</div>
+<div class="before_comment">
+	<div style="width:200px; font-weight:bold;"class="button_selection rounded"><span style="font-size:20px; text-transform:uppercase;">Comment</span></br> On This Recipe</div>
+</div>	
+<% else %>
+You have to login to comment. <%= link_to_modal 'Sign In', new_user_session_path %>
+<% end %>

@@ -1,43 +1,45 @@
 <h4>Put Your Recipe Where Your Mouth Is!</h4></br>
-<div class="left">
-<%= simple_nested_form_for @recipe, html: {multipart: true} do |f| %>
-  <%= f.error_notification %>
+<div class="sign_container">
+  <div class="left">
+  <%= simple_nested_form_for @recipe, html: {multipart: true} do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <p><%= f.collection_select :dish_id, Dish.order(:name),:id,:name, {:prompt => @challenge_recipe_name? @challenge_recipe_name : "Select a Recipe", :selected => @challenge_recipe} %> <span style="font-size:14px; line-height:20px; margin-left:10px;">* Select the Dish You Want to Challenge</span></p>
-    <%= f.input :name, label: false, placeholder: "Your Recipe Name (be descriptive & fun)" %>
-    <%= f.input :introduction, label: false, placeholder: "Quickly describe why this is the best F$%^&king recipe ever" %>
-    <%= f.input :ingredients, label: false, placeholder: "Add Your Ingredients (one per line)" %>
-    <%= f.input :directions,label: false, placeholder: "Give Step By Step Numbered Directions (one per line)" %>
-     <%= f.input :difficulty, collection: @difficulty, prompt: "Select Difficulty Level"%>
-    <%= f.input :serving, collection: 1..10, prompt: "Number of Servings"%>
-    <span style="font-size:14px; line-height:20px;">*Prep Time (hour:minute)</span></br>
-    <%= f.time_select :prep, :default => {:hour => '0', :minute => '0'} %></br></br>
-    <span style="font-size:14px; line-height:20px;">*Cook Time (hour:minute)</span></br>
-    <%= f.time_select :cook, :default => {:hour => '0', :minute => '0'} %></br></br>
-    
-    <%= f.simple_fields_for :recipe_images do |m| %>
-        <%= m.input :caption, label: "*Please Add a Photo (as big as you got)" %>
-        <%= m.file_field :photo %>
-        <%= m.link_to_remove "Remove this photo" %>
-    <% end %>
-    </br><p><%= f.link_to_add "Add Another Image >>", :recipe_images %></p>
+    <div class="form-inputs">
+      <p><%= f.collection_select :dish_id, Dish.order(:name),:id,:name, {:prompt => @challenge_recipe_name? @challenge_recipe_name : "Select a Recipe", :selected => @challenge_recipe} %> <span style="font-size:11px; line-height:20px; margin-left:10px;">* Select the Dish You Want to Challenge</span></p>
+      <%= f.input :name, label: false, placeholder: "Your Recipe Name (be descriptive & fun)" %>
+      <%= f.input :introduction, label: false, placeholder: "Quickly describe why this is the best F$%^&king recipe ever" %>
+      <%= f.input :ingredients, label: false, placeholder: "Add Your Ingredients (one per line)" %>
+      <%= f.input :directions,label: false, placeholder: "Give Step By Step Numbered Directions (one per line)" %>
+       <%= f.input :difficulty, collection: @difficulty, prompt: "Select Difficulty Level"%>
+      <%= f.input :serving, collection: 1..10, prompt: "Number of Servings"%>
+      <span style="font-size:14px; line-height:20px;">*Prep Time (hour:minute)</span></br>
+      <%= f.time_select :prep, :default => {:hour => '0', :minute => '0'} %></br></br>
+      <span style="font-size:14px; line-height:20px;">*Cook Time (hour:minute)</span></br>
+      <%= f.time_select :cook, :default => {:hour => '0', :minute => '0'} %></br></br>
+      
+      <%= f.simple_fields_for :recipe_images do |m| %>
+          <%= m.input :caption, label: "*Please Add a Photo (as big as you got)" %>
+          <%= m.file_field :photo %>
+          <%= m.link_to_remove "Remove this photo" %>
+      <% end %>
+      </br><p><%= f.link_to_add "Add Another Image >>", :recipe_images %></p>
 
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Submit Your Challenge Recipe >>" %> <%= link_to 'Cancel', recipes_path %>
+    </div>
+  <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Submit Your Challenge Recipe >>" %> <%= link_to 'Cancel', recipes_path %>
+  <div class="left helper_box rounded">
+    <h4 style="text-align:center; font-weight:bold;">Tips for Creating A Good Challenge</h4>
+    <ul>
+      <li>Be Extremely Descriptive in Your Titles and Instructions</li>
+      <li>Write in a Voice that Appeals to Your Core Audience</li>
+      <li>Use Layered Tastes</li>
+      <li>Clearly State Each and Every Important Detail</li>
+      <li>BRING THE FREAKIN' HEAT</li>
+    </ul>
+    <span style="font-size:11px;">*Remember: None of the tips matter, if your recipe isn't the BEST!</span>
   </div>
-<% end %>
-</div>
-<div class="right helper_box rounded">
-  <h4 style="text-align:center; font-weight:bold;">Tips for Creating A Good Challenge</h4>
-  <ul>
-    <li>Be Extremely Descriptive in Your Titles and Instructions</li>
-    <li>Write in a Voice that Appeals to Your Core Audience</li>
-    <li>Use Layered Tastes</li>
-    <li>Clearly State Each and Every Important Detail</li>
-    <li>BRING THE FREAKIN' HEAT</li>
-  </ul>
-  <span style="font-size:11px;">*Remember: None of the tips matter, if your recipe isn't the BEST!</span>
 </div>

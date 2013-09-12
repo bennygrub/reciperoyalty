@@ -1,4 +1,4 @@
-<% if @recipe.king == false %>
+            <% if @recipe.king == false %>
               <div class="left">
                 <% if !current_user.nil? %>
                   <div id="love_form">
@@ -10,12 +10,12 @@
                   </div>
                 <% else %>
                   <%= link_to_modal new_user_session_path do %>
-                    <div class="button_selection left rounded" style="width:155px;">Love This Recipe</div>
+                    <div class="button_selection left rounded" style="width:110px;">Love This Recipe</div>
                   <% end %>
                 <% end %>
               </div>
             <% else %>
-              <div class="button_selection left rounded" style="width:200px;">
+              <div class="button_selection left rounded" style="width:115px;">
                 <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %><div class="embed_button">Challenge</div>
               </div>
             <% end %>

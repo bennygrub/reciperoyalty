@@ -1,39 +1,43 @@
-<div id="main_recipe" style="background-image: url(<%= @image %>);">
-  <%= render 'closed_view' %>
-  <div class="open_view">
-    <div class="tab">Open Recipe</div>
-    <div class="close_tab">Close Recipe</div>
-      <div class="open">
-        <%= render 'open_recipe'%>
-      </div>
+<% if @recipe.king == false && @recipe.created_at < 30.days.ago %>
+  <%= render "loser" %>  
+<% else %>
+  <div id="main_recipe" style="background-image: url(<%= @image %>);">
+    <%= render 'closed_view' %>
+    <div class="open_view">
+      <div class="tab">Open Recipe</div>
+      <div class="close_tab">Close Recipe</div>
+        <div class="open">
+          <%= render 'open_recipe'%>
+        </div>
+    </div>
   </div>
-</div>
-<div id="home_middle">
-  <% if @recipe.king == true %>
-    <h2>
-      <span style="text-transform:uppercase;">Meet the <span class="bolded_headline">Challengers</span></span> </br>
-    </h2>
-  <% else %>
-    <h2>
-      <span style="text-transform:uppercase;">The <span class="bolded_headline">Challengers</span> Prospects</span> </br>
-    </h2>
-  <% end %>
-  <% if user_signed_in? %> 
-    <% if @recipe.user_id == current_user.id %>
-      <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-      <%= link_to 'Back', recipes_path %> |
-      <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
+  <div id="home_middle">
+    <% if @recipe.king == true %>
+      <h2>
+        <span style="text-transform:uppercase;">Meet the <span class="bolded_headline">Challengers</span></span> </br>
+      </h2>
+    <% else %>
+      <h2>
+        <span style="text-transform:uppercase;">The <span class="bolded_headline">Challenger's</span> Prospects</span> </br>
+      </h2>
     <% end %>
-  <% end %>
-</div>
-<div id="home_bottom">
-  <% if @recipe.king == false %>
-    <%= render 'challenger_prospects' %>
-  <% elsif @challengers.count > 0 %>
-    <%= render 'king_challengers' %>
-  <% else %>
-    There are currently no challengers for this recipe. Step up, Put your recipe where your mouth is and <%= link_to 'Challenge This Recipe >>', new_recipe_path(:challenge => @recipe.dish_id) %>.
-  <% end %>
-</div>
-<div class="clear_me"></div>
-<script type="text/javascript">$("#tabber-container").easytabs();</script>
+    <% if user_signed_in? %> 
+      <% if @recipe.user_id == current_user.id %>
+        <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+        <%= link_to 'Back', recipes_path %> |
+        <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="home_bottom">
+    <% if @recipe.king == false %>
+      <%= render 'challenger_prospects' %>
+    <% elsif @challengers.count > 0 %>
+      <%= render 'king_challengers' %>
+    <% else %>
+      There are currently no challengers for this recipe. Step up, Put your recipe where your mouth is and <%= link_to 'Challenge This Recipe >>', new_recipe_path(:challenge => @recipe.dish_id) %>.
+    <% end %>
+  </div>
+  <div class="clear_me"></div>
+  <script type="text/javascript">$("#tabber-container").easytabs();</script>
+<% end %>

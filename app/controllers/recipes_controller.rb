@@ -73,9 +73,13 @@ class RecipesController < ApplicationController
   def create
 
     @recipe = current_user.recipes.new(params[:recipe])
+    @user = current_user
+    @dish = Dish.find(@recipe.dish_id)
+    @winner = Recipe.where("dish_id = ? AND king = ?", @recipe.dish_id, true).first
 
     respond_to do |format|
       if @recipe.save
+        RecipeMailer.create_recipe(@user, @recipe, @winner, @dish).deliver
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render json: @recipe, status: :created, location: @recipe }
       else

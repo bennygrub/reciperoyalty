@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>The Challenge Begins</h1>
+    <p>
+      You think your recipe - <b><%= @recipe.name %></b> - is the <b>F^%*KIN' BEST</b>. Now it's time to prove it!
+    </p>
+    <p>
+      You need to garner 1,000 loves for <%= link_to 'your recipe', recipe_path(@recipe) %>  in the next 30 days. If you do, it will be entered into a blind taste off against <%= link_to @winner.name, recipe_path(@winner) %> for the BEST <%= @dish.name %> recipe in the entire world.
+    </p>
+    <p>Invite as many of your fans, friends, family and admirers to your recipe page as possible to get the loves you need to qualify for the taste test. You can go to your recipe page to see how you are doing and we will update you as you go.</p>
+    
+    <p>Thanks for <b>Putting Your Recipe Where Your Mouth Is</b>. That was a step many wouldn't take. Now go out there and take the crown of BEST <%= @dish.name %></p>
+  </body>
+</html>

@@ -11,8 +11,15 @@ class Recipe < ActiveRecord::Base
   acts_as_commentable
   has_many :comments, :as => :commentable, :dependent => :destroy
 
+  after_create :create_recipe_email
+
   private
   	def require_photo
   		errors.add(:base, 'Must have at least one photo') if recipe_images.all?(&:marked_for_destruction?)
   	end
+
+    def create_recipe_email
+      
+    end
+
 end

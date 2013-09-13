@@ -10,7 +10,10 @@
                   </div>
                 <% else %>
                   <%= link_to_modal new_user_session_path do %>
-                    <div class="button_selection left rounded" style="width:110px;">Love This Recipe</div>
+                    <div class="button_selection left rounded love_button">
+                      <div class="left thumbs_up_logged_out"></div>
+                        <div class="left" style="padding-top: 14px;padding-left: 2px;"><span style="font-size:30px;font-weight:900;">Love</span></br>
+                        This Recipe</div>
                   <% end %>
                 <% end %>
               </div>

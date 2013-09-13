@@ -436,7 +436,7 @@ h1.recipe_title {
 	color: #fff;
 	position: absolute; 
 	bottom: -26px;
-	height: 125px;
+	height: 132px;
 	width: 100%;
 }
 
@@ -447,7 +447,7 @@ h1.recipe_title {
 	height: 653px;
 }
 .scrollable-area {
-	height:493px;
+	height: 489px;
 	width: 100%;
 	overflow: scroll;
 }
@@ -606,7 +606,6 @@ a.button_selection.active {
 }
 
 .love_button {
-	width: 123px;
 	text-align: right;
 	font-size: 13px;
 	font-family: 'Roboto', sans-serif;
@@ -615,10 +614,16 @@ a.button_selection.active {
 	letter-spacing: -2px;
 	line-height: 13px;
 	padding: 0 10px 0 0;
+	min-width: 155%;
+	color:#3387ee;
 }
 
 .love_button:hover  {
 	color:#fff;
+}
+
+.love_button:hover img {
+
 }
 
 .already_loved {
@@ -853,5 +858,36 @@ li.active a.button_selection.left.rounded .embed_icon{
 
 .button_selection img {
 	float: left;
+}
+
+.thumbs_up {
+	background-image:url('/assets/thumbs_blue.png');
+	background-repeat: no-repeat;
+	padding: 30px;
+}
+
+.thumbs_up_logged_out {
+	background-image: url('/assets/thumbs_blue.png');
+	background-repeat: no-repeat;
+	padding: 30px 30px 24px 34px;
+}
+
+.thumbs_up_logged_out:hover {
+	background-image: url('/assets/thumbs_white.png');
+}
+
+
+button.button_selection.rounded.love_button .thumbs_up:hover {
+	background-image:url('/assets/thumbs_white.png');
+}
+
+.already_loved {
+	background-image:url('/assets/thumbs_blue.png');
+	background-repeat: no-repeat;
+	padding-bottom: 3px;
+}
+
+.already_loved:hover {
+	background-image:url('/assets/thumbs_white.png');
 }
 /* ICONS IN THE TABS END */

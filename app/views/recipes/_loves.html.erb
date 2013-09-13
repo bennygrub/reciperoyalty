@@ -2,7 +2,8 @@
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :recipe_id, value: @recipe.id %>
   <%= button_tag(type: 'submit', class: "button_selection rounded love_button") do %>
-     <span style="font-size:30px;font-weight:900;">Love</span></br>
-     This Recipe
+     <div class="left thumbs_up"></div>
+     <div class="left" style="padding-top: 14px;padding-left: 2px;"><span style="font-size:30px;font-weight:900;">Love</span></br>
+     This Recipe</div>
   <% end %>
 <% end %>

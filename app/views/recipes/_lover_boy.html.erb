@@ -15,7 +15,11 @@
                 <% end %>
               </div>
             <% else %>
-              <div class="button_selection left rounded" style="width:115px;">
-                <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %><div class="embed_button">Challenge</div>
-              </div>
+              <%= link_to new_recipe_path(:challenge => @recipe.dish_id) do %>
+                <div class="button_selection left rounded" style="min-width: 17%;">
+                    <div style="padding-top:3px;float:left;"><%= image_tag 'fist_black.png' %></div> 
+                    <div style="padding-top: 11px;float: left;text-align: left;font-weight: 900;text-transform: uppercase;font-size: 19px;letter-spacing: -2px;line-height: 16px;">Challenge</br><span style="font-weight:300;">this Recipe</span></div>
+                    
+                </div>
+              <% end %>
             <% end %>

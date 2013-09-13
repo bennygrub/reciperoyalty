@@ -36,6 +36,9 @@ h4 {
 	font-weight: 400;
 	font-size: 22px;
 }
+.nav > li > a > img:hover {
+	color:red;
+}
 
 .hidden {
 	display: none;
@@ -495,6 +498,9 @@ h1.recipe_title {
 .chef_info {
 	padding: 60px 0 0 0;
 }
+
+
+
 .sign_container {
 
 }
@@ -526,8 +532,10 @@ h1.recipe_title {
 
 
 .button_selection {
-	font-size: 14px;
-	line-height: 20px;
+	font-size: 13px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	line-height: 14px;
 	height:55px;
 	width: 55px;
 	text-align: center;
@@ -738,3 +746,101 @@ a.button_selection.active {
 	line-height: 90px;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.55);
 }
+
+/* ICONS IN THE TABS */
+
+.chef_icon {
+	background-image:url('/assets/chef_black.png');
+	background-repeat: no-repeat;
+	padding: 26px;
+	margin: 2px 0 0 3px;
+}
+
+.chef_icon:hover {
+	background-image:url('/assets/chef_white.png');
+}
+
+li.active a.button_selection.left.rounded .chef_icon{
+	background-image:url('/assets/chef_white.png');
+}
+
+
+.fork_icon {
+	background-image:url('/assets/silverware.png');
+	background-repeat: no-repeat;
+	padding: 26px;
+	margin: 2px 0 0 3px;
+}
+
+.fork_icon:hover {
+	background-image:url('/assets/silverware_white.png');
+}
+
+li.active a.button_selection.left.rounded .fork_icon{
+	background-image:url('/assets/silverware_white.png');
+}
+
+.pic_icon {
+	background-image:url('/assets/picture_black.png');
+	background-repeat: no-repeat;
+	padding: 26px;
+	margin: 2px 0 0 3px;
+}
+
+.pic_icon:hover {
+	background-image:url('/assets/picture_white.png');
+}
+
+li.active a.button_selection.left.rounded .pic_icon{
+	background-image:url('/assets/picture_white.png');
+}
+
+.comment_icon {
+	background-image:url('/assets/comments_black.png');
+	background-repeat: no-repeat;
+	padding: 26px;
+	margin: 2px 0 0 3px;
+}
+
+.comment_icon:hover {
+	background-image:url('/assets/comments_white.png');
+}
+
+li.active a.button_selection.left.rounded .comment_icon{
+	background-image:url('/assets/comments_white.png');
+}
+
+.video_icon {
+	background-image:url('/assets/video_black.png');
+	background-repeat: no-repeat;
+	padding: 26px;
+	margin: 2px 0 0 3px;
+}
+
+.video_icon:hover {
+	background-image:url('/assets/video_white.png');
+}
+
+li.active a.button_selection.left.rounded .video_icon{
+	background-image:url('/assets/video_white.png');
+}
+
+.embed_icon {
+	background-image:url('/assets/embed_black.png');
+	background-repeat: no-repeat;
+	padding: 26px;
+	margin: 2px 0 0 3px;
+}
+
+.embed_icon:hover {
+	background-image:url('/assets/embed_white.png');
+}
+
+li.active a.button_selection.left.rounded .embed_icon{
+	background-image:url('/assets/embed_white.png');
+}
+
+.button_selection img {
+	float: left;
+}
+/* ICONS IN THE TABS END */

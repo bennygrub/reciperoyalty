@@ -11,7 +11,7 @@
   <% end %>
   <% if user_signed_in? %>
     <li>
-      <%= link_to('Profile', current_user) %>
+      <%= link_to current_user do %> <%= image_tag('login.png') %> Profile <% end %>
     </li>
   <% else %>
     <li>
@@ -19,10 +19,10 @@
     </li>
   <% end %>
   <li>
-      <%= link_to('Categories', recipes_path)  %>
+      <%= link_to recipes_path do %> <%= image_tag('category.png') %>Categories <% end %>
   </li>
   <li>
-      <%= link_to_modal('We Know Best', static_about_path)  %>
+      <%= link_to_modal static_about_path do %> <%= image_tag('questionmark.png') %>We Know Best <% end %>
   </li>
   <li>
       <%= link_to('Best Dishes', dishes_path)  %>

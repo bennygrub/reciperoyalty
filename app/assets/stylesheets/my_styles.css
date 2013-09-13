@@ -393,6 +393,11 @@ h1.recipe_title {
 	bottom: 125px;
 }
 
+.xbutton {
+	margin-bottom: 2px;
+	width: 8%;
+}
+
 .tab {
 	width: 175px;
 	height:35px;
@@ -406,6 +411,7 @@ h1.recipe_title {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
 	cursor: pointer;
+	padding: 5px 0;
 }
 
 .close_tab {
@@ -422,6 +428,7 @@ h1.recipe_title {
 	font-weight: 700;
 	cursor: pointer;
 	display: none;
+	padding: 5px 0;
 }
 
 .open_view {
@@ -608,6 +615,10 @@ a.button_selection.active {
 	letter-spacing: -2px;
 	line-height: 13px;
 	padding: 0 10px 0 0;
+}
+
+.love_button:hover  {
+	color:#fff;
 }
 
 .already_loved {
@@ -829,7 +840,7 @@ li.active a.button_selection.left.rounded .video_icon{
 	background-image:url('/assets/embed_black.png');
 	background-repeat: no-repeat;
 	padding: 26px;
-	margin: 2px 0 0 3px;
+	margin: 2px 0 0 1px;
 }
 
 .embed_icon:hover {

@@ -4,8 +4,15 @@
   <div id="main_recipe" style="background-image: url(<%= @image %>);">
     <%= render 'closed_view' %>
     <div class="open_view">
-      <div class="tab">Open Recipe</div>
-      <div class="close_tab">Close Recipe</div>
+      <div class="tab">
+        <div><%= image_tag 'open_bars.png' %></div>
+        <span style="color:rgb(45, 160, 214)">Open Recipe</span>
+      </div>
+      <div class="close_tab">
+        <div><%= image_tag 'close_bars.png' %></div>
+        <%= image_tag 'xout.png', class: 'xbutton' %>
+        <span style="color: rgb(206, 206, 206);"> Close Recipe</span>
+      </div>
         <div class="open">
           <%= render 'open_recipe'%>
         </div>

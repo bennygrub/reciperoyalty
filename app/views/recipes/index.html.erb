@@ -1,52 +1,35 @@
 <h1>The Very Best Recipes</h1>
 <p>On <b>RecipeRoyalty.com</b> there is no room for the good or even the great. We onsly have the SINGLE BEST recipe for each listed dish. The recipes have been vetted by the community and each has been approved by experts in blind taste test. So you know you are only cooking and tasting the very best!</p>
 
-<h3 style="margin:0px;">Entrees</h3>
-<div style="border-top: 5px solid #000">
-<% @recipes_best.each do |best| %>
-    <%= link_to(best) do %>
-        <div class="feature_view rounded global_shadow fade">
-          <%= image_tag best.recipe_images.first.photo.url(:medium) if best.recipe_images.count > 0 %>
-          <p class="feature_text"><%= best.name %></p>
+<% if params[:search] %>
+    <% if @recipes_search.count > 0 %>
+        <h3 style="margin:0px;">Recipes That Match Your Search</h3>
+        <div style="border-top: 5px solid #000">
+            <% @recipes_best.each do |best| %>
+                <%= link_to(best) do %>
+                    <div class="feature_view rounded global_shadow fade">
+                      <%= image_tag best.recipe_images.first.photo.url(:medium) if best.recipe_images.count > 0 %>
+                      <p class="feature_text"><%= best.name %></p>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    <% else %>
+        <div style="margin-top:40px;">
+            There are no matches for that search. Please try again. One word searches work best.
+            <%=link_to_modal 'Search Again', search_path  %>
         </div>
     <% end %>
+<% else %>
+    <h3 style="margin:0px;">Dinner</h3>
+    <div style="border-top: 5px solid #000">
+        <% @recipes_best.each do |best| %>
+            <%= link_to(best) do %>
+                <div class="feature_view rounded global_shadow fade">
+                  <%= image_tag best.recipe_images.first.photo.url(:medium) if best.recipe_images.count > 0 %>
+                  <p class="feature_text"><%= best.name %></p>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
 <% end %>
-</div>
-
-<h3>Challenger Recipes</h3>
-<table>
-  <tr>
-    <th>User</th>
-    <th>Name</th>
-    <th>Introduction</th>
-    <th>Serving</th>
-    <th>Prep</th>
-    <th>Cook</th>
-    <th>Difficulty</th>
-    <th>Ingredients</th>
-    <th>Directions</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @recipes_challengers.each do |recipe| %>
-  <tr>
-    <td><%= recipe.user_id %></td>
-    <td><%= recipe.name %></td>
-    <td><%= recipe.introduction %></td>
-    <td><%= recipe.serving %></td>
-    <td><%= recipe.prep.strftime("%H:%M") %></td>
-    <td><%= recipe.cook.strftime("%H:%M") %></td>
-    <td><%= recipe.difficulty %></td>
-    <td><%= recipe.ingredients %></td>
-    <td><%= recipe.directions %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-<br />
-
-<%= link_to 'New Recipe', new_recipe_path %>

@@ -2,30 +2,37 @@
 <ul class="nav">
   <% if user_signed_in? %>
     <li>
-      <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to('Login', new_user_session_path)  %>
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
       <%= link_to current_user do %> <%= image_tag('login.png') %> Profile <% end %>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to('Sign up', new_user_registration_path)  %>
     </li>
   <% end %>
   <li>
       <%= link_to recipes_path do %> <%= image_tag('category.png') %>Categories <% end %>
   </li>
   <li>
-      <%= link_to_modal static_about_path do %> <%= image_tag('questionmark.png') %>We Know Best <% end %>
+      <%= link_to_modal about_path do %> <%= image_tag('questionmark.png') %>We Know Best <% end %>
   </li>
   <li>
-      <%= link_to('Best Dishes', dishes_path)  %>
+      <%= link_to_modal search_path do %> <%= image_tag('questionmark.png') %>Search <% end %>
   </li>
+  <% if user_signed_in? %>
+    <% if current_user.admin == true %>
+      <li>
+        <%= link_to('Dishes', dishes_path)  %>
+      </li>
+      <li>
+        <%= link_to('Recipes', dishes_path)  %>
+      </li>
+    <% end %>
+    <li>
+      <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to('Login', new_user_session_path)  %>
+    </li>
+    <li>
+      <%= link_to('Sign up', new_user_registration_path)  %>
+    </li>
+  <% end %>
 </ul>
 

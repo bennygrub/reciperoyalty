@@ -1,0 +1,7 @@
+<h1>Search Recipes</h1>
+<h4>Go Ahead, Search Our Recipes!</h4>
+
+<%= form_for @search, :url => recipes_path, :html => {:method => :get} do |f| %>
+  <%= f.text_field :name_or_introduction_or_ingredients_or_directions_contains, placeholder: "Enter Any Keyword" %><br />
+  <%= f.submit "Search" %>
+<% end %>

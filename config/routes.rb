@@ -18,10 +18,11 @@ Rr::Application.routes.draw do
   end
 
   get "static/home"
-
-  get "static/about"
-
+  match '/about', to: 'static#about'
+  match '/search', to: 'static#search'
+  match '/admin-recipes', to: 'static#admin_recipes'
   get "static/contact"
+
 
   post "recipes/add_new_comment"
 

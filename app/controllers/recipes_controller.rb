@@ -6,8 +6,15 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
-    @recipes_best = Recipe.where("king = ?", true)
+    if params[:search]
+      @recipes_best_before = Recipe.where("king = ?", true)
+      @search = @recipes_best_before.search(params[:search])
+      @recipes_best = @search.all  # load all matching records
+    else
+      @recipes_best = Recipe.where("king = ?", true)
+      # @articles = @search.relation # Retrieve the relation, to lazy-load in view
+      # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+    end
     @recipes_challengers = Recipe.where("king = ?", false)
 
     respond_to do |format|
@@ -145,8 +152,10 @@ class RecipesController < ApplicationController
 
   def no_change
     @recipe = Recipe.find(params[:id])
+    @user = User.find(@recipe.user_id)
+
     if @recipe.created_at > 30.days.ago
-      redirect_to @recipe, notice: "This Challenger Recipe Can No Longer Be Changed, Since It Is Older Than 24hrs."
+      redirect_to @recipe, notice: "This Challenger Recipe Can No Longer Be Changed, Since It Is Older Than 24hrs." unless @user.admin == true
     end 
   end
 

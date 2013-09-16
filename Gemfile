@@ -25,7 +25,8 @@ gem 'flexslider'
 gem 'jquery-ui-rails'
 gem 'jquery-modal-rails'
 gem 'fancybox-rails'
-gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
+gem 'will_paginate', '~> 3.0.0'
+gem "meta_search"
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -29,10 +29,8 @@
       </h2>
     <% end %>
     <% if user_signed_in? %> 
-      <% if @recipe.user_id == current_user.id %>
-        <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-        <%= link_to 'Back', recipes_path %> |
-        <%= link_to 'CHALLENGE', new_recipe_path(:challenge => @recipe.dish_id) %>
+      <% if @recipe.user_id == current_user.id && @recipe.created_at < 30.days.ago %>
+        <%= link_to 'Edit', edit_recipe_path(@recipe) %> (you can only edit your recipe for the 24hrs after you post. After that your recipe will be locked down)
       <% end %>
     <% end %>
   </div>

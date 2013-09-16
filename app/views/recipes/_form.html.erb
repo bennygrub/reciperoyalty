@@ -16,7 +16,7 @@
       <%= f.time_select :prep, :default => {:hour => '0', :minute => '0'} %></br></br>
       <span style="font-size:14px; line-height:20px;">*Cook Time (hour:minute)</span></br>
       <%= f.time_select :cook, :default => {:hour => '0', :minute => '0'} %></br></br>
-      
+      <%= f.input :video, label: false, placeholder: "Add a recipe video (youtube or vimeo url)" %>
       <%= f.simple_fields_for :recipe_images do |m| %>
           <%= m.input :caption, label: "*Please Add a Photo (as big as you got)" %>
           <%= m.file_field :photo %>

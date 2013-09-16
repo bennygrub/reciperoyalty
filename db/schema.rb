@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130912211803) do
+ActiveRecord::Schema.define(:version => 20130916161231) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20130912211803) do
     t.datetime "king_at"
     t.datetime "king_out"
     t.boolean  "slider",                      :default => false
+    t.string   "video"
   end
 
   create_table "taggings", :force => true do |t|

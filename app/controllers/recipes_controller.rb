@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   layout :resolve_layout
   #before_filter :auth_user, :except => [:show, :index]
   before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :no_change, :only => [:edit, :update]
   # GET /recipes
   # GET /recipes.json
   def index
@@ -140,6 +141,13 @@ class RecipesController < ApplicationController
 
   def auth_user
     redirect_to new_user_registration_url unless user_signed_in?
+  end
+
+  def no_change
+    @recipe = Recipe.find(params[:id])
+    if @recipe.created_at > 30.days.ago
+      redirect_to @recipe, notice: "This Challenger Recipe Can No Longer Be Changed, Since It Is Older Than 24hrs."
+    end 
   end
 
   def resolve_layout

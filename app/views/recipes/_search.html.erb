@@ -1,0 +1,11 @@
+        <h3 style="margin:0px;">Recipes That Match Your Search <span class="view_all_text"><%=link_to '(clear search)', recipes_path  %></span></h3>
+        <div style="border-top: 5px solid #000">
+            <% @recipes_search.each do |best| %>
+                <%= link_to(best) do %>
+                    <div class="feature_view rounded global_shadow fade">
+                      <%= image_tag best.recipe_images.first.photo.url(:medium) if best.recipe_images.count > 0 %>
+                      <p class="feature_text"><%= best.name %></p>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>

@@ -1,0 +1,6 @@
+            <%= link_to(best) do %>
+                <div class="feature_view rounded global_shadow fade">
+                  <%= image_tag best.recipe_images.first.photo.url(:medium) if best.recipe_images.count > 0 %>
+                  <p class="feature_text"><%= best.name %></p>
+                </div>
+            <% end %>

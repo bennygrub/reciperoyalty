@@ -1,35 +1,19 @@
 <h1>The Very Best Recipes</h1>
 <p>On <b>RecipeRoyalty.com</b> there is no room for the good or even the great. We onsly have the SINGLE BEST recipe for each listed dish. The recipes have been vetted by the community and each has been approved by experts in blind taste test. So you know you are only cooking and tasting the very best!</p>
 
+
 <% if params[:search] %>
     <% if @recipes_search.count > 0 %>
-        <h3 style="margin:0px;">Recipes That Match Your Search</h3>
-        <div style="border-top: 5px solid #000">
-            <% @recipes_best.each do |best| %>
-                <%= link_to(best) do %>
-                    <div class="feature_view rounded global_shadow fade">
-                      <%= image_tag best.recipe_images.first.photo.url(:medium) if best.recipe_images.count > 0 %>
-                      <p class="feature_text"><%= best.name %></p>
-                    </div>
-                <% end %>
-            <% end %>
-        </div>
+        <%= render 'search' %>
     <% else %>
         <div style="margin-top:40px;">
             There are no matches for that search. Please try again. One word searches work best.
             <%=link_to_modal 'Search Again', search_path  %>
         </div>
     <% end %>
+
+<% elsif params[:category]%>
+    <%= render "category_specific"%>
 <% else %>
-    <h3 style="margin:0px;">Dinner</h3>
-    <div style="border-top: 5px solid #000">
-        <% @recipes_best.each do |best| %>
-            <%= link_to(best) do %>
-                <div class="feature_view rounded global_shadow fade">
-                  <%= image_tag best.recipe_images.first.photo.url(:medium) if best.recipe_images.count > 0 %>
-                  <p class="feature_text"><%= best.name %></p>
-                </div>
-            <% end %>
-        <% end %>
-    </div>
+    <%= render "categories"%>
 <% end %>

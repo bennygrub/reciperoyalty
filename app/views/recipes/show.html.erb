@@ -1,7 +1,10 @@
 <% if @recipe.king == false && @recipe.created_at < 30.days.ago %>
-  <%= render "loser" %>  
+  <%= render "loser" %>
 <% else %>
   <div id="main_recipe" style="background-image: url(<%= @image %>);">
+    <div> 
+      <%= render 'add_this' %>  
+    </div>
     <%= render 'closed_view' %>
     <div class="open_view">
       <div class="tab">

@@ -891,3 +891,21 @@ button.button_selection.rounded.love_button .thumbs_up:hover {
 	background-image:url('/assets/thumbs_white.png');
 }
 /* ICONS IN THE TABS END */
+
+.addthis_floating_style {
+	background: rgba(0, 0, 0, 0.50) !important;
+}
+
+.addthis_button_twitter, .addthis_button_facebook, .addthis_button_compact, .addthis_button_pinterest_share {
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.addthis_button_twitter:hover, .addthis_button_facebook:hover, .addthis_button_compact:hover, .addthis_button_pinterest_share:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+	-moz-filter: grayscale(0%);
+	filter: grayscale(0%);
+}

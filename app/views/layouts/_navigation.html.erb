@@ -2,17 +2,17 @@
 <ul class="nav">
   <% if user_signed_in? %>
     <li>
-      <%= link_to current_user do %> <%= image_tag('login.png') %> Profile <% end %>
+      <%= link_to current_user do %> <%= image_tag('nav_person_white.png') %> Profile <% end %>
     </li>
   <% end %>
   <li>
-      <%= link_to recipes_path do %> <%= image_tag('category.png') %>Categories <% end %>
+      <%= link_to recipes_path do %> <%= image_tag('nav_cat_icon.png') %>Categories <% end %>
   </li>
   <li>
-      <%= link_to_modal about_path do %> <%= image_tag('questionmark.png') %>We Know Best <% end %>
+      <%= link_to_modal about_path do %> <%= image_tag('nav_thumb_white.png') %>We Know Best <% end %>
   </li>
   <li>
-      <%= link_to_modal search_path do %> <%= image_tag('questionmark.png') %>Search <% end %>
+      <%= link_to_modal search_path do %> <%= image_tag('nav_search_white.png') %>Search <% end %>
   </li>
   <% if user_signed_in? %>
     <% if current_user.admin == true %>
@@ -28,10 +28,10 @@
     </li>
   <% else %>
     <li>
-      <%= link_to('Login', new_user_session_path)  %>
+      <%= link_to new_user_session_path do %> <%= image_tag('nav_person_white.png') %> Login <% end %>
     </li>
     <li>
-      <%= link_to('Sign up', new_user_registration_path)  %>
+      <%= link_to new_user_registration_path do %> <%= image_tag('nav_lock_white.png') %>Sign Up <% end %>
     </li>
   <% end %>
 </ul>

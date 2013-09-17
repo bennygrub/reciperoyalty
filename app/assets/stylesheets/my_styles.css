@@ -8,7 +8,7 @@ ul {
 body a {
 	color: #ee3335;
 }
-body a:hover {
+body a:hover, body a:visited {
 	color: #ee3335;
 	background: none;
 }
@@ -45,7 +45,7 @@ h4 {
 	font-size: 22px;
 }
 .nav > li > a > img:hover {
-	color:red;
+	color:#fff;
 }
 
 .hidden {

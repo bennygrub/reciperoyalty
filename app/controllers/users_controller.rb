@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :check_for_admin
+  before_filter :check_for_admin, :only => [:index]
 
   def show
   	@user = User.find(params[:id])

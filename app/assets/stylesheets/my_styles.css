@@ -245,6 +245,16 @@ input[type="submit"] {
 	font-weight: 700; 
 }
 
+.small_btn input[type="submit"] {
+	width: 100px;
+	height: 30px;
+	font-size: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	background-color: rgb(253, 151, 151);
+}
+
+
 #comments_form input[type="submit"] {
 	background-color: #C7C7C7;
 	width: 320px;
@@ -958,4 +968,18 @@ button.button_selection.rounded.love_button .thumbs_up:hover {
 	font-size: 12px;
 	font-weight: 300;
 	background-color: #fff;
+}
+
+label {
+	margin: 15px 0 4px 0;
+}
+
+select, input[type="file"] {
+	height: 30px;
+	line-height: 30px;
+	background: lightgrey;
+	padding: 5px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }

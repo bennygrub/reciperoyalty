@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_filter :check_for_admin, :only => [:index]
+  before_filter :yourself, :only => [:edit, :show]
+  before_filter :authenticate_user!
+  before_filter :auth_user
 
   def show
   	@user = User.find(params[:id])
@@ -23,10 +26,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def admin_edit
+    @user = User.find(params[:id])
+  end
+  
   private
+  
   def check_for_admin
     unless current_user.try(:admin?)
       redirect_to root_path, :alert => "You Are Not An Admin Buddy"
     end 
+  end
+  def yourself
+    if current_user
+      @user = User.find(params[:id])
+      unless current_user.id == @user.id
+        redirect_to root_path, :alert => "You Aren't You"
+      end
+    end 
+  end
+
+  def auth_user
+    redirect_to new_user_registration_url unless user_signed_in?
   end
 end

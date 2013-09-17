@@ -74,6 +74,5 @@ Rr::Application.configure do
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
-  ActionMailer::Base.default_url_options[:host] = "http://www.reciperoyalty.com"
 
 end

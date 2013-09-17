@@ -27,7 +27,11 @@ Rr::Application.routes.draw do
   post "recipes/add_new_comment"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
-  resources :users
+  resources :users do
+    member do
+      get :admin_edit
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

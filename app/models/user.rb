@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :recipes
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :mini => "50x50>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :mini => "50x50>" }, :default_url => "missing_:style.png"
 
   has_many :loves
 

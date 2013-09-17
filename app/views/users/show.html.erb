@@ -10,7 +10,7 @@
 			<p>Challenges: <%= @current_kings.count %>/<%= @user.recipes.count %></p>
 		</div>
 	</div>
-	<div id="profile_right" class="right">
+	<div id="profile_right" class="left">
 		<h4>Why You Are the BEST?!?</h4>
 		<p><%= @user.about %></p>
 	</div>
@@ -19,61 +19,65 @@
 </div>
 <div id="profile_bottom">
 	<% if @user.recipes.count > 0 %>
-		<h3>Current KING Recipes (<%= @current_kings.count %>)</h3>
-		<div class="profile_recipes">
-		<% @current_kings.each do |king| %>
-			<div class="small_recipe_view left">
-				<div class="left small_recipe_view_img">
-					<%= image_tag king.recipe_images.first.photo.url(:thumb), class: 'rounded global_shadow' if king.recipe_images.count > 0 %>
+		<% if @current_kings.count > 0 %>
+			<h3>Current KING Recipes (<%= @current_kings.count %>)</h3>
+			<div class="profile_recipes">
+			<% @current_kings.each do |king| %>
+				<div class="small_recipe_view left">
+					<div class="left small_recipe_view_img">
+						<%= image_tag king.recipe_images.first.photo.url(:thumb), class: 'rounded global_shadow' if king.recipe_images.count > 0 %>
+					</div>
+					<div class="left small_recipe_view_text">
+						<span style="font-weight:bold; font-size:15px;"><%= link_to truncate(king.name, :length=>25), recipe_path(king) %></span></br>
+						Dish: <%= Dish.find(king.dish_id).name %></br>
+						Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>
+						Time Remaining: <%= distance_of_time_in_words(30.days.ago, king.created_at, include_seconds: true) %>
+					</div>
+					<div class="clear_me"></div>
 				</div>
-				<div class="left small_recipe_view_text">
-					<span style="font-weight:bold; font-size:15px;"><%= link_to truncate(king.name, :length=>25), recipe_path(king) %></span></br>
-					Dish: <%= Dish.find(king.dish_id).name %></br>
-					Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>
-					Time Remaining: <%= distance_of_time_in_words(30.days.ago, king.created_at, include_seconds: true) %>
-				</div>
+			<% end %>
 				<div class="clear_me"></div>
 			</div>
 		<% end %>
+		<% if @current_challenges.count > 0 %>
+			<h3>Current Challenger Recipes (<%= @current_challenges.count %>)</h3>
+			<div class="profile_recipes">
+			<% @current_challenges.each do |king| %>
+				<div class="small_recipe_view left">
+					<div class="left small_recipe_view_img">
+						<%= image_tag king.recipe_images.first.photo.url(:thumb), class: 'rounded global_shadow' if king.recipe_images.count > 0 %>
+					</div>
+					<div class="left small_recipe_view_text">
+						<span style="font-weight:bold; font-size:15px;"><%= link_to king.name, recipe_path(king) %></span></br>
+						Dish: <%= Dish.find(king.dish_id).name %></br>
+						Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>
+						Time Remaining: <%= distance_of_time_in_words(30.days.ago, king.created_at, include_seconds: true) %>
+					</div>
+					<div class="clear_me"></div>
+				</div>
+			<% end %>
+			</div>
 			<div class="clear_me"></div>
-		</div>
-
-		<h3>Current Challenger Recipes (<%= @current_challenges.count %>)</h3>
-		<div class="profile_recipes">
-		<% @current_challenges.each do |king| %>
-			<div class="small_recipe_view left">
-				<div class="left small_recipe_view_img">
-					<%= image_tag king.recipe_images.first.photo.url(:thumb), class: 'rounded global_shadow' if king.recipe_images.count > 0 %>
-				</div>
-				<div class="left small_recipe_view_text">
-					<span style="font-weight:bold; font-size:15px;"><%= link_to king.name, recipe_path(king) %></span></br>
-					Dish: <%= Dish.find(king.dish_id).name %></br>
-					Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>
-					Time Remaining: <%= distance_of_time_in_words(30.days.ago, king.created_at, include_seconds: true) %>
-				</div>
-				<div class="clear_me"></div>
-			</div>
 		<% end %>
-		</div>
-		<div class="clear_me"></div>
-
-		<h3>PAST Recipes (<%= @past_recipes.count %>)</h3>
-		<div class="profile_recipes">
-		<% @past_recipes.each do |king| %>
-			<div class="small_recipe_view left">
-				<div class="left small_recipe_view_img">
-					<%= image_tag king.recipe_images.first.photo.url(:thumb), class: 'rounded global_shadow' if king.recipe_images.count > 0 %>
+		<% if @past_recipes.count > 0 %>
+			<h3>PAST Recipes (<%= @past_recipes.count %>)</h3>
+			<div class="profile_recipes">
+			<% @past_recipes.each do |king| %>
+				<div class="small_recipe_view left">
+					<div class="left small_recipe_view_img">
+						<%= image_tag king.recipe_images.first.photo.url(:thumb), class: 'rounded global_shadow' if king.recipe_images.count > 0 %>
+					</div>
+					<div class="left small_recipe_view_text">
+						<span style="font-weight:bold; font-size:15px;"><%= link_to king.name, recipe_path(king) %></span></br>
+						Dish: <%= Dish.find(king.dish_id).name %></br>
+						Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>
+					</div>
+					<div class="clear_me"></div>
 				</div>
-				<div class="left small_recipe_view_text">
-					<span style="font-weight:bold; font-size:15px;"><%= link_to king.name, recipe_path(king) %></span></br>
-					Dish: <%= Dish.find(king.dish_id).name %></br>
-					Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>
-				</div>
-				<div class="clear_me"></div>
+			<% end %>
 			</div>
+			<div class="clear_me"></div>
 		<% end %>
-		</div>
-		<div class="clear_me"></div>
 	<% else %>
 		<h3>Your Recipes</h3>
 		<p>You have not submitted any recipes. That is totally cool, keep eating. If you think you have a recipe that is worthy of challenging the current king recipe, go to the recipe page and challenge it. Or <%= link_to 'click here >>', new_recipe_path %> </p>

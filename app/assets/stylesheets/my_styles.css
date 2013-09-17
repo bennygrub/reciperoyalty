@@ -137,11 +137,12 @@ p a:hover {
 #profile_top {
 	border-bottom: solid 3px black;
 	width: 100%;
-	padding: 20px 0 5px; 
+	padding: 20px 0; 
 }
 
 #profile_left h1 {
 	line-height: 20px;
+	font-size: 20px;
 }
 
 #profile_left {
@@ -689,7 +690,6 @@ a.button_selection.active {
 .prospect_view {
 	position: relative;
 	float: left;
-	width: 250px;
 	height: 160px;
 	margin: 20px 40px 20px 0;
 	overflow: hidden;

@@ -1,6 +1,6 @@
 
 <div class="chef-love">
-	<% if !@recipe.video.nil? %>
+	<% if !@recipe.video.blank?%>
 		<%= link_to @recipe.video, class: "various fancybox.iframe" do %>
 			<%= image_tag @recipe.recipe_images.first.photo.url(:big), class: "rounded" %>
 			<div style="text-align:center;color:#fff;">Click Image to Play Video </div>

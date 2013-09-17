@@ -3,8 +3,4 @@
               <h4>Ingredients:</h4>
               <p><%= simple_format(@recipe.ingredients) %></p>
               <h4>Directions:</h4>
-              <p><%= @recipe.directions %><p>
-            <p>
-              <b>Dish:</b>
-              <%= Dish.find(@recipe.dish_id).name %>
-            </p>
+              <p><%= simple_format(@recipe.directions) %><p>

@@ -174,10 +174,9 @@ class RecipesController < ApplicationController
 
   def no_change
     @recipe = Recipe.find(params[:id])
-    @user = User.find(@recipe.user_id)
 
     if @recipe.created_at > 30.days.ago
-      redirect_to @recipe, notice: "This Challenger Recipe Can No Longer Be Changed, Since It Is Older Than 24hrs." unless @user.admin == true
+      redirect_to @recipe, notice: "This Challenger Recipe Can No Longer Be Changed, Since It Is Older Than 24hrs." unless current_user.try(:admin?)
     end 
   end
 

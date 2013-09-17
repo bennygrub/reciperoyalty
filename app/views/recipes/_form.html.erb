@@ -17,6 +17,12 @@
       <span style="font-size:14px; line-height:20px;">*Cook Time (hour:minute)</span></br>
       <%= f.time_select :cook, :default => {:hour => '0', :minute => '0'} %></br></br>
       <%= f.input :video, label: false, placeholder: "Add a recipe video (youtube or vimeo url)" %>
+      <% if current_user.admin == true %>
+        <p>Featured Image? (check to make feature)</p>
+        <%= f.input :slider, label: false, placeholder: "type true or false" %>
+      <% end %>
+
+
       <%= f.simple_fields_for :recipe_images do |m| %>
           <span style="font-size:14px; line-height:20px;">*Please Add a Photo (as big as you got)</span></br></br>
           <%= m.file_field :photo %>

@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :cook, :difficulty, :directions, :ingredients, :introduction, :name, :prep, :serving, :dish_id, :recipe_images_attributes, :video
+  attr_accessible :cook, :difficulty, :directions, :ingredients, :introduction, :name, :prep, :serving, :dish_id, :recipe_images_attributes, :video, :slider
   belongs_to :user
   belongs_to :dish
   has_many :recipe_images, :dependent => :destroy

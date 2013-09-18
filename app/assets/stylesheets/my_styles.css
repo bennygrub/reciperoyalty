@@ -542,6 +542,11 @@ h1.recipe_title {
 	width: 55%;
 }
 
+.chef-love-container {
+	margin:20px auto 0 auto;
+	width: 80%;
+}
+
 .chef_image img {
 	margin: 10px 0;
 	text-align: center;

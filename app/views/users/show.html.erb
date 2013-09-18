@@ -30,7 +30,6 @@
 					<div class="left small_recipe_view_text">
 						<span style="font-weight:bold; font-size:15px;"><%= link_to truncate(king.name, :length=>25), recipe_path(king) %></span></br>
 						Dish: <%= Dish.find(king.dish_id).name %></br>
-						Loves: <%= Love.where("user_id = ? AND recipe_id = ?", @user.id, king.id).count %>/1000</br>
 						Time Remaining: <%= distance_of_time_in_words(30.days.ago, king.created_at, include_seconds: true) %>
 					</div>
 					<div class="clear_me"></div>

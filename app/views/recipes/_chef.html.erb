@@ -3,7 +3,7 @@
 			<div class="chef_image"><%= image_tag @chef.avatar.url(:medium), class: 'rounded' %></div>
 			<div class="clear_me"></div>
 			<h2><%= @chef.name.titlecase %></h2>
-			<span style="font-size:14px;font-weight:300;">(<%= @chef.website %>)</span>
+			<span style="font-size:14px;font-weight:300;">(<%= link_to @chef.website %>)</span>
 		</div>
 		<div class="clear_me"></div>
 	<%= simple_format(@chef.about) %>

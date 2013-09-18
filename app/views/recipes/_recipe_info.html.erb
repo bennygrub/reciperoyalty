@@ -1,5 +1,5 @@
               <h4>Introduction</h4>
-              <p><%= @recipe.introduction %></p>
+              <p><%= simple_format(@recipe.introduction) %></p>
               <h4>Ingredients:</h4>
               <p><%= simple_format(@recipe.ingredients) %></p>
               <h4>Directions:</h4>

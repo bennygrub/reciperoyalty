@@ -19,7 +19,9 @@
       <%= f.input :video, label: false, placeholder: "Add a recipe video (youtube or vimeo url)" %>
       <% if current_user.admin == true %>
         <p>Featured Image? (check to make feature)</p>
-        <%= f.input :slider, label: false, placeholder: "type true or false" %>
+        <%= f.input :slider %>
+        <p>Make King? (check to make King)</p>
+        <%= f.input :king %>
       <% end %>
 
 

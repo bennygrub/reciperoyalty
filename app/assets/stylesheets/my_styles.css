@@ -543,7 +543,7 @@ h1.recipe_title {
 }
 
 .chef_image img {
-	margin: 10px 10px 10px 0;
+	margin: 10px 0;
 	text-align: center;
 
 }
@@ -659,7 +659,7 @@ a.button_selection.active {
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: -2px;
-	line-height: 13px;
+	line-height: 11px;
 	padding: 0 10px 0 0;
 	min-width: 155%;
 	color:#3387ee;

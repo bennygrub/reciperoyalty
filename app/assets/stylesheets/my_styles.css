@@ -14,7 +14,7 @@ body a:hover, body a:visited {
 }
 
 body {
-	padding-top: 40px;
+	padding-top: 0px;
 }
 
 
@@ -516,6 +516,18 @@ h1.recipe_title {
 	margin-left: 10px;
 	display: none;
 }
+.recipe_footer_vertical {
+	position: absolute;
+	bottom: -450px;
+	height: 504px;
+	border: 1px solid #fff;
+	padding: 10px 0;
+	margin-left: 10px;
+	display: none;
+	right: 24px;
+	background: rgba(0, 0, 0, 0.54);
+	list-style-type: none;
+}
 
 .intro {
 	position: relative;
@@ -667,6 +679,39 @@ a.button_selection.active {
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee3335', endColorstr='#ee3335', GradientType=0);
 }
+
+.button_selection_vertical {
+	font-size: 13px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	line-height: 14px;
+	height:55px;
+	width: 55px;
+	text-align: center;
+	vertical-align: middle;
+	color: #333333;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	cursor: pointer;
+	background-color: #ebebeb;
+	background-image: -moz-linear-gradient(top, #ebebeb, #a7a7a7);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ebebeb), to(#a7a7a7));
+	background-image: -webkit-linear-gradient(top, #ebebeb, #a7a7a7);
+	background-image: -o-linear-gradient(top, #ebebeb, #a7a7a7);
+	background-image: linear-gradient(to bottom, #ebebeb, #a7a7a7);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#a7a7a7', GradientType=0);
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	border: 1px solid #cccccc;
+	border-bottom-color: #b3b3b3;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	margin:0 12px;
+
+}
+
 
 .love_button {
 	text-align: right;

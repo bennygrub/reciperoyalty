@@ -1,5 +1,5 @@
 <%= link_to image_tag('logo.jpg'), root_path, class: 'brand logo' %>
-<ul class="nav">
+<ul class="nav" style="padding:0px;">
   <% if user_signed_in? %>
     <li>
       <%= link_to current_user do %> <%= image_tag('nav_person_white.png') %> Profile <% end %>

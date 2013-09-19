@@ -13,6 +13,10 @@ body a:hover, body a:visited {
 	background: none;
 }
 
+body {
+	padding-top: 40px;
+}
+
 
 .alertfull {
 	z-index: 10;
@@ -46,6 +50,9 @@ h4 {
 }
 .nav > li > a > img:hover {
 	color:#fff;
+}
+header ul.nav {
+	padding: 0px;
 }
 
 .hidden {
@@ -133,6 +140,10 @@ p a:hover {
 .navbar .nav {
 	padding: 10px;
 }
+.navbar .brand img {
+	width: 75%;
+}
+
 
 #profile_top {
 	border-bottom: solid 3px black;

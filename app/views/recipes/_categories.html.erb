@@ -1,34 +1,6 @@
-<h3 style="margin:0px;">Dinner <span class="view_all_text"><%=link_to '(view all)', recipes_path(:category => "dinner")  %></span></h3>
+<h3 style="margin:0px;">The Best Recipe For Every Dish</h3>
     <div style="border-top: 5px solid #000">
-        <% @dinner_recipes.limit(3).each do |best| %>
-            <%= render 'list', :best => best %>
-        <% end %>
-    </div>
-    <div class="clear_me"></div>
-    <h3 style="margin:0px;">Lunch <span class="view_all_text"><%=link_to '(view all)', recipes_path(:category => "lunch")  %></span></h3>
-    <div style="border-top: 5px solid #000">
-        <% @lunch_recipes.limit(3).each do |best| %>
-            <%= render 'list', :best => best %>
-        <% end %>
-    </div>
-    <div class="clear_me"></div>
-    <h3 style="margin:0px;">Breakfast <span class="view_all_text"><%=link_to '(view all)', recipes_path(:category => "breakfast")  %></span></h3>
-    <div style="border-top: 5px solid #000">
-        <% @breakfast_recipes.limit(3).each do |best| %>
-            <%= render 'list', :best => best %>
-        <% end %>
-    </div>
-    <div class="clear_me"></div>
-    <h3 style="margin:0px;">Desserts <span class="view_all_text"><%=link_to '(view all)', recipes_path(:category => "dessert")  %></span></h3>
-    <div style="border-top: 5px solid #000">
-        <% @dessert_recipes.limit(3).each do |best| %>
-            <%= render 'list', :best => best %>
-        <% end %>
-    </div>
-    <div class="clear_me"></div>
-    <h3 style="margin:0px;">Sides <span class="view_all_text"><%=link_to '(view all)', recipes_path(:category => "sides")  %></span></h3>
-    <div style="border-top: 5px solid #000">
-        <% @sides_recipes.limit(3).each do |best| %>
+        <% @recipes_best.shuffle.each do |best| %>
             <%= render 'list', :best => best %>
         <% end %>
     </div>

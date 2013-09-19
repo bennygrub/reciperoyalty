@@ -16,26 +16,7 @@ class RecipesController < ApplicationController
       @category_mapping = @category_dish.map {|dish| dish.id}
       @category_recipes = Recipe.where("king = ? AND dish_id IN (?)", true, @category_mapping)
     else
-      @dinner_dish = Dish.tagged_with("dinner")
-      @dinner_mapping = @dinner_dish.map {|dish| dish.id}
-      @dinner_recipes = Recipe.where("king = ? AND dish_id IN (?)", true, @dinner_mapping)
-
-      @breakfast_dish = Dish.tagged_with("breakfast")
-      @breakfast_mapping = @breakfast_dish.map {|dish| dish.id}
-      @breakfast_recipes = Recipe.where("king = ? AND dish_id IN (?)", true, @breakfast_mapping)
-
-      @lunch_dish = Dish.tagged_with("lunch")
-      @lunch_mapping = @lunch_dish.map {|dish| dish.id}
-      @lunch_recipes = Recipe.where("king = ? AND dish_id IN (?)", true, @lunch_mapping)
-
-      @dessert_dish = Dish.tagged_with("dessert")
-      @dessert_mapping = @dessert_dish.map {|dish| dish.id}
-      @dessert_recipes = Recipe.where("king = ? AND dish_id IN (?)", true, @dessert_mapping)
-
-      @sides_dish = Dish.tagged_with("sides")
-      @sides_mapping = @sides_dish.map {|dish| dish.id}
-      @sides_recipes = Recipe.where("king = ? AND dish_id IN (?)", true, @sides_mapping)
-
+      @recipes_best = Recipe.where("king = ?", true)
     end
     @recipes_challengers = Recipe.where("king = ?", false)
 

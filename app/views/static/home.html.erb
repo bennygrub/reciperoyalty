@@ -32,7 +32,7 @@
 		<%= link_to(feature) do %>
 		<div class="feature_view rounded global_shadow fade">
 			<%= image_tag feature.recipe_images.first.photo.url(:medium) if feature.recipe_images.count > 0 %>
-			<p class="feature_text"><%= feature.name %></p>
+			<p class="feature_text">The Very Best <%= Dish.find(feature.dish_id).name %></p>
 		</div>
 		<% end %>
 	<% end %>

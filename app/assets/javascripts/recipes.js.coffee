@@ -6,6 +6,9 @@ $ ->
 		$(".open_view").animate
 			bottom: "550px"
 			, 2000
+		$("#main_recipe").animate
+			height: "700px"
+			, 2000
 		$(".recipe_footer").show()
 		$(".tab").hide()
 		$(".close_tab").show()

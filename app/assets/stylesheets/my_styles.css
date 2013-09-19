@@ -412,7 +412,7 @@ input[type="submit"] {
 #main_recipe {
 	position:relative;
 	width: 100%;
-	height:700px;
+	height:600px;
 	overflow: hidden;
 	background-repeat:no-repeat;
 	-webkit-background-size: cover;

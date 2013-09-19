@@ -1,6 +1,6 @@
           <h1 class="recipe_title"><%= @recipe.name %></h1>
           <div id="tabber-container" class="tabber-container">
-            <div class="scrollable-area">
+            <div class="scrollable-area_vertical">
               <div id="tabs-intro">
                 <div class="intro" id="tabs-intro">
                   <%= render "intro"%>
@@ -33,7 +33,7 @@
               </div>
             </div>
             
-            <ul class='recipe_footer'>
+            <ul class='recipe_footer recipe_footer_vertical rounded'>
               <%= render "recipe_footer" %>
             </ul>
           </div>

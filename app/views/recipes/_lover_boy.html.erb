@@ -10,7 +10,7 @@
                   </div>
                 <% else %>
                   <%= link_to_modal new_user_session_path do %>
-                    <div class="button_selection left rounded love_button">
+                    <div class="button_selection_vertical left rounded love_button">
                       <div class="left thumbs_up_logged_out"></div>
                         <div class="left" style="padding-top: 14px;padding-left: 2px;"><span style="font-size:30px;font-weight:900;">Love</span></br>
                         This Recipe</div>
@@ -19,9 +19,9 @@
               </div>
             <% else %>
               <%= link_to new_recipe_path(:challenge => @recipe.dish_id) do %>
-                <div class="button_selection left rounded" style="min-width: 17%;">
+                <div class="button_selection_vertical left rounded" style="min-width: 17%;">
                     <div style="padding-top:3px;float:left;"><%= image_tag 'fist_black.png' %></div> 
-                    <div style="padding-top: 11px;float: left;text-align: left;font-weight: 900;text-transform: uppercase;font-size: 14px;letter-spacing: -1px;line-height: 13px;">Challenge</br><span style="font-weight:300;">this Recipe</span></div>
+                    <div class="challenge_button_text_vertical">Challenge</br><span style="font-weight:300;">this Recipe</span></div>
                     
                 </div>
               <% end %>

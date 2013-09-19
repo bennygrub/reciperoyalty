@@ -1,9 +1,12 @@
 <%= simple_form_for @love, remote: true, :url => url_for(:action => 'create', :controller => 'loves'), :method => 'post' do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :recipe_id, value: @recipe.id %>
-  <%= button_tag(type: 'submit', class: "button_selection rounded love_button") do %>
+  <%= button_tag(type: 'submit', class: "button_selection_vertical rounded love_button_vertical") do %>
      <div class="left thumbs_up"></div>
-     <div class="left" style="padding-top:14px;"><span style="font-size:20px;font-weight:900;">Love</span></br>
-     This Recipe</div>
   <% end %>
+  <div class="left" style="text-align: center;
+font-size: 9px;
+padding-left: 9px;
+line-height: 10px;"><span style="font-size:20px;font-weight:900;">Love</span></br>
+     This Recipe</div>
 <% end %>

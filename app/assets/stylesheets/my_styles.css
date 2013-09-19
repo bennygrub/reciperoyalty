@@ -14,7 +14,7 @@ body a:hover, body a:visited {
 }
 
 body {
-	padding-top: 0px;
+	padding-top: 40px;
 }
 
 
@@ -506,6 +506,13 @@ h1.recipe_title {
 	width: 100%;
 	overflow: scroll;
 }
+
+.scrollable-area_vertical {
+	height: 563px;
+	width: 100%;
+	overflow: scroll;
+}
+
 .recipe_footer {
 	position: absolute; 
 	bottom: -565px;
@@ -524,10 +531,35 @@ h1.recipe_title {
 	padding: 10px 0;
 	margin-left: 10px;
 	display: none;
-	right: 24px;
+	width: 7%;
+	left: 1px;
 	background: rgba(0, 0, 0, 0.54);
 	list-style-type: none;
 }
+
+.challenge_button_text {
+	padding-top: 11px;
+	float: left;
+	text-align: left;
+	font-weight: 900;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: -1px;
+	line-height: 13px;
+}
+
+.challenge_button_text_vertical {
+	padding-top: 11px;
+	float: left;
+	color: #fff;
+	text-align: left;
+	font-weight: 900;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: -1px;
+	line-height: 13px;
+}
+
 
 .intro {
 	position: relative;
@@ -708,10 +740,43 @@ a.button_selection.active {
 	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-	margin:0 12px;
+	margin: 5px 7px;
 
 }
+.button_selection_vertical:hover {
+	background-color: #A8A8A8;
+	background-image: -moz-linear-gradient(top, #A8A8A8, #6F6F6F);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A8A8A8), to(#6F6F6F));
+	background-image: -webkit-linear-gradient(top, #A8A8A8, #6F6F6F);
+	background-image: -o-linear-gradient(top, #A8A8A8, #6F6F6F);
+	background-image: linear-gradient(to bottom, #A8A8A8, #6F6F6F);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A8A8A8', endColorstr='#6F6F6F', GradientType=0);
+}
 
+
+a.button_selection_vertical {
+	text-decoration: none;
+}
+
+a.button_selection_vertical.active {
+	color:#fff;
+	background-color: #ee3335;
+	cursor: pointer;
+	border-color: none;
+	border: none;
+	border-bottom-color: none;
+    -moz-box-shadow: inset 2px 2px 4px #181818;
+    -webkit-box-shadow: inset 2px 2px 4px #181818;
+    box-shadow: inset 2px 2px 4px #181818;
+   	background-image: -moz-linear-gradient(top, #ee3335, #ee3335);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee3335), to(#ee3335));
+	background-image: -webkit-linear-gradient(top, #ee3335, #ee3335);
+	background-image: -o-linear-gradient(top, #ee3335, #ee3335);
+	background-image: linear-gradient(to bottom, #ee3335, #ee3335);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee3335', endColorstr='#ee3335', GradientType=0);
+}
 
 .love_button {
 	text-align: right;
@@ -722,7 +787,7 @@ a.button_selection.active {
 	letter-spacing: -2px;
 	line-height: 11px;
 	padding: 0 10px 0 0;
-	min-width: 155%;
+	width: 70px;
 	color:#3387ee;
 }
 
@@ -734,11 +799,49 @@ a.button_selection.active {
 
 }
 
+.love_button_vertical {
+	text-align: right;
+	font-size: 13px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	line-height: 11px;
+	padding: 0 10px 0 0;
+	width: 58px;
+	color:#3387ee;
+}
+
+.love_button_vertical_after {
+	text-align: right;
+	font-size: 13px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	line-height: 11px;
+	padding: 0 10px 0 0;
+	width: 46px;
+	color:#3387ee;
+}
+
+.love_button_vertical:hover  {
+	color:#fff;
+}
+
+.love_button_vertical:hover img {
+
+}
+
 .already_loved {
 	padding-top: 5px;
 	line-height: 23px;
 	font-size: 31px;
 	font-weight: 900;
+}
+
+.already_loved_vertical {
+	padding: 37px;
 }
 .challenger_prospects {
 	margin: 20px 0 0 0;
@@ -996,6 +1099,16 @@ button.button_selection.rounded.love_button .thumbs_up:hover {
 
 .already_loved:hover {
 	background-image:url('/assets/thumbs_white.png');
+}
+
+.already_loved_vertical {
+	background-image:url('/assets/thumbs_red.png');
+	background-repeat: no-repeat;
+	padding-bottom: 3px;
+}
+
+.already_loved_vertical:hover {
+	background-image:url('/assets/thumbs_red.png');
 }
 /* ICONS IN THE TABS END */
 

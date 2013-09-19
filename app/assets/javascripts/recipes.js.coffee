@@ -29,13 +29,17 @@ $ ->
 		$(".challenger_bar").fadeIn(2000)
 
 $ ->
-  $(".scrollable-area").slimScroll
-  	height: "495px"
+  $(".scrollable-area_vertical").slimScroll
+  	height: "563px"
   	color: "#fff"
   	alwaysVisible: "true"
 
 $ ->
 	$(".already_loved").click ->
+		alert "You Already Loved This Recipe! It must be really great. We will take note."
+
+$ ->
+	$(".already_loved_vertical").click ->
 		alert "You Already Loved This Recipe! It must be really great. We will take note."
 
 $ ->

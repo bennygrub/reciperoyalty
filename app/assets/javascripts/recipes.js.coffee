@@ -20,6 +20,9 @@ $ ->
 		$(".open_view").animate
 			bottom: "-26px"
 			, 3000
+		$("#main_recipe").animate
+			height: "600px"
+			, 2000
 		$(".recipe_footer").hide()
 		$(".tab").show()
 		$(".close_tab").hide()

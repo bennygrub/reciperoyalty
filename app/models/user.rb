@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
 
   has_many :loves
 
+  after_create :send_admin_email
 
-
+  def send_admin_email
+    UserMailer.new_user(self).deliver
+  end
 end

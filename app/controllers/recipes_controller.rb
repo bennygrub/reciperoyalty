@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   layout :resolve_layout
   #before_filter :auth_user, :except => [:show, :index]
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :iframe]
   before_filter :no_change, :only => [:edit, :update]
   # GET /recipes
   # GET /recipes.json

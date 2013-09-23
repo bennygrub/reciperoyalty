@@ -14,6 +14,10 @@ class Recipe < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  def should_generate_new_friendly_id?
+    new_record?
+  end
+
   after_create :create_recipe_email
 
   private

@@ -28,6 +28,7 @@ gem 'fancybox-rails'
 gem 'will_paginate', '~> 3.0.0'
 gem "meta_search"
 gem 'aws-sdk'
+gem "friendly_id", "~> 4.0.10"
 
 # Gems used only for assets and not required
 # in production environments by default.

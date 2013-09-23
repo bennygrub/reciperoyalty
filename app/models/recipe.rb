@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :cook, :difficulty, :directions, :ingredients, :introduction, :name, :prep, :serving, :dish_id, :recipe_images_attributes, :video, :slider
+  attr_accessible :cook, :difficulty, :directions, :ingredients, :introduction, :name, :prep, :serving, :dish_id, :recipe_images_attributes, :video, :slider, :king
   belongs_to :user
   belongs_to :dish
   has_many :recipe_images, :dependent => :destroy
@@ -10,6 +10,9 @@ class Recipe < ActiveRecord::Base
   validates_length_of :name, :maximum => 28
   acts_as_commentable
   has_many :comments, :as => :commentable, :dependent => :destroy
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   after_create :create_recipe_email
 

@@ -5,7 +5,7 @@ $ ->
 	$(".tab").click ->
 		$(".open_view").animate
 			bottom: "550px"
-			, 2000
+			, 1000
 		$("#main_recipe").animate
 			height: "700px"
 			, 2000
@@ -19,7 +19,7 @@ $ ->
 	$(".close_tab").click ->
 		$(".open_view").animate
 			bottom: "-26px"
-			, 2000
+			, 1000
 		$("#main_recipe").animate
 			height: "600px"
 			, 2000

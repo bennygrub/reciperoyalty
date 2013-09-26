@@ -6,7 +6,7 @@
 
     <div class="form-inputs">
       <p><%= f.collection_select :dish_id, Dish.order(:name),:id,:name, {:prompt => @challenge_recipe_name? @challenge_recipe_name : "Select a Recipe", :selected => @challenge_recipe} %> <span style="font-size:11px; line-height:20px; margin-left:10px;">* Select the Dish You Want to Challenge</span></p>
-      <%= f.input :name, label: false, placeholder: "Your Recipe Name (be descriptive & fun)" %>
+      <%= f.input :name, label: false, placeholder: "Your Recipe Name (be descriptive & fun - no more than 40 characters)" %>
       <%= f.input :introduction, label: false, placeholder: "Quickly describe why this is the best F$%^&king recipe ever" %>
       <%= f.input :ingredients, label: false, placeholder: "Add Your Ingredients (one per line)" %>
       <%= f.input :directions,label: false, placeholder: "Give Step By Step Numbered Directions (one per line)" %>

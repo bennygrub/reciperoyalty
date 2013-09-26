@@ -1,8 +1,12 @@
       <% if @recipe.king == false %>
         <div class="challenger_bar">
           <div class="inner_challenger_bar">
-            <h1><%= @dish_name %> Challenger: <span style="font-weight:300;"><%= User.find(@recipe.user_id).name %></span></h1>
+            <h1><span style="color:#ee3335;"><%= @dish_name %></span> Challenger: <span style="font-weight:100;"><%= User.find(@recipe.user_id).name %></span></h1>
             <p>A challenger's recipe is only live for <b>30 days</b>. In that time they need to garner <b>1,000 loves</b> from the community. If they do, they are automatically entered into a blind taste off against the reigning king of <%= @dish_name %> recipe. So try the recipe and see what you think. If you really believe it is the single best <%= @dish_name %> recipe ever - come back and love it!</p>
           </div>
         </div>
+      <% else %>
+      	<div class="dish_label rotate">
+      		<div class="dish_label_inner">The Best <span style="color:#ee3335"><%= @dish_name %></span> Recipe</div>
+      	</div>
       <% end %>

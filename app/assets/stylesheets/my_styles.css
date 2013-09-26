@@ -17,6 +17,18 @@ body {
 	padding-top: 40px;
 }
 
+.rotate {
+	/* Safari */
+	-webkit-transform: rotate(-30deg);
+	/* Firefox */
+	-moz-transform: rotate(-30deg);
+	/* IE */
+	-ms-transform: rotate(-30deg);
+	/* Opera */
+	-o-transform: rotate(-30deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
 
 .alertfull {
 	z-index: 10;
@@ -378,7 +390,7 @@ input[type="submit"] {
    text-align: center;
    text-decoration: none !Important;
    color: white; 
-   font: 500 18px 'Roboto', sans-serif; 
+   font: 100 18px 'Roboto', sans-serif; 
    letter-spacing: -1px;  
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.6);
@@ -619,7 +631,25 @@ h1.recipe_title {
 
 }
 
+.dish_label {
+	position: absolute;
+	top: 90px;
+	background: rgba(0, 0, 0, .75);
+	width: 465px;
+	margin: auto;
+	color: #fff;
+	left: -80px;
+	padding: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	border: 1px solid #727272;
+}
 
+.dish_label_inner {
+	margin: auto;
+	text-align: center;
+}
 
 .challenger_bar {
 	background: rgba(0, 0, 0, .75);
@@ -630,6 +660,8 @@ h1.recipe_title {
 .challenger_bar h1 {
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
 	text-transform: uppercase;
+	font-size: 28px;
+	text-align: center;
 }
 
 .inner_challenger_bar {

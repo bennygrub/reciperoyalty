@@ -13,6 +13,7 @@ $ ->
 		$(".tab").hide()
 		$(".close_tab").show()
 		$(".challenger_bar").fadeOut(500)
+		$(".dish_label").fadeOut(500)
 
 
 $ ->
@@ -27,6 +28,7 @@ $ ->
 		$(".tab").show()
 		$(".close_tab").hide()
 		$(".challenger_bar").fadeIn(2000)
+		$(".dish_label").fadeIn(2000)
 
 $ ->
   $(".scrollable-area_vertical").slimScroll

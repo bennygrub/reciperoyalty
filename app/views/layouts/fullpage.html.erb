@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Recipe Royalty" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "#{@title} | Recipe Royalty" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Recipe Royalty" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100,900italic,700italic,500italic,400italic,100italic,300italic' rel='stylesheet' type='text/css'>

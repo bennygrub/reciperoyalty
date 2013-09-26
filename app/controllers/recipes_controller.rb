@@ -39,10 +39,13 @@ class RecipesController < ApplicationController
     @dish_name = @dish_object.name # dish name
     @iframe_url = request.original_url
 
+
     #if recipe is a challenger
     @competition = Recipe.where("dish_id = ? AND king = ?", @recipe.dish_id, true)
     @winner = @competition.first
 
+
+    @title = "The Best #{@dish_name} Recipe | #{@recipe.name}"
 
     if !current_user.nil?
       @already_loved = Love.where("user_id = ? AND recipe_id = ?", current_user, @recipe.id)

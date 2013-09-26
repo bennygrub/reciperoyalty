@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
+    @title = "All the Best Recipes in the World and on the Web"
     if params[:search]
       @recipes_best_before = Recipe.where("king = ?", true)
       @search = @recipes_best_before.search(params[:search])

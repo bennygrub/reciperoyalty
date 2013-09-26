@@ -2,7 +2,7 @@ class StaticController < ApplicationController
   before_filter :check_for_admin, :only => [:admin_recipes]
   layout "fullpage", :only => [:home, :about]
   def home
-  	@title = "Recipe Royalty | There Can Be Only One BEST Recipe"
+  	@title = "Only the Single Best Recipe for Every Dish"
   	@featured = Recipe.where("slider = ?", true)
   end
 

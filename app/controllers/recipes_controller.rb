@@ -64,7 +64,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipe.recipe_images.build
     @difficulty = ['Easy', 'Medium', 'Hard']
-    
+    @title = "Challenge a King Recipe"
 
     if params[:challenge]
       @challenge_recipe = params[:challenge]
@@ -81,6 +81,7 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find(params[:id])
     @recipe.recipe_images.build
+    @title = "Edit Your Recipe"
   end
 
   # POST /recipes
@@ -149,6 +150,7 @@ class RecipesController < ApplicationController
     @image = @recipe.recipe_images.first.photo.url if @recipe.recipe_images.count > 0
     @chef = User.find(@recipe.user_id)
     @dish = Dish.find(@recipe.dish_id)
+    @title = "The Best #{@dish.name} Recipe | #{@recipe.name}"
   end
 
   private

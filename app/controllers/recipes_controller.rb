@@ -82,6 +82,13 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.recipe_images.build
     @title = "Edit Your Recipe"
+    @difficulty = ['Easy', 'Medium', 'Hard']
+
+    if params[:challenge]
+      @challenge_recipe = params[:challenge]
+      @challenge_recipe_name = Dish.find(@challenge_recipe).name
+    end
+
   end
 
   # POST /recipes
